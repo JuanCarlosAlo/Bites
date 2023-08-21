@@ -12,7 +12,7 @@ const StyledText = styled.p`
 	}};
 	word-wrap:break-word;
 	text-overflow: ellipsis;
-	/* width: 100%; */
+	width: 100%;
 	font-size: ${({ fontSize }) => MEASUREMENTS.FONTS_SIZE[fontSize].MOBILE};
 	margin-top:  ${({ fontSize }) => { return `calc(${MEASUREMENTS.FONTS_SIZE[fontSize].MOBILE} - 0.5rem)` }};
 	margin-bottom:  ${({ fontSize }) => { return `calc(${MEASUREMENTS.FONTS_SIZE[fontSize].MOBILE} - 0.5rem)` }};

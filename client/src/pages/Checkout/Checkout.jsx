@@ -12,7 +12,7 @@ const Checkout = () => {
 	const { state } = useLocation();
 	if (!state) return <Navigate to={'/'} />;
 	const [content, setContent] = useState(null);
-	console.log(state);
+
 	return (
 		<>
 			<PageComponent isBack={true}>

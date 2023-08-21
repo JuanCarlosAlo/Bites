@@ -61,7 +61,7 @@ const ItemContainer = ({ item, inCart, data, setData }) => {
 							align={MEASUREMENTS.ALIGN.CENTER}
 							color={COLORS.WHITE}
 							fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TITLE}
-							text={'-'}
+							text={' - '}
 						/>
 					</StyledCuantityButton>
 				)}
@@ -81,7 +81,7 @@ const ItemContainer = ({ item, inCart, data, setData }) => {
 							align={MEASUREMENTS.ALIGN.CENTER}
 							color={COLORS.WHITE}
 							fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TITLE}
-							text={'+'}
+							text={' + '}
 						/>
 					</StyledCuantityButton>
 				)}

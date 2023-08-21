@@ -14,6 +14,7 @@ import Cart from '../pages/Cart/Cart';
 import ItemInfo from '../pages/ItemInfo/ItemInfo';
 import Address from '../pages/Address/Address';
 import Checkout from '../pages/Checkout/Checkout';
+import Orders from '../pages/Orders/Orders';
 
 const Router = () => {
 	return (
@@ -32,6 +33,7 @@ const Router = () => {
 					<Route path={'item/:id'} element={<ItemInfo />} />
 					<Route path={'address'} element={<Address />} />
 					<Route path={'checkout'} element={<Checkout />} />
+					<Route path={'orders/:id'} element={<Orders />} />
 				</Route>
 			</Route>
 		</Routes>

@@ -27,4 +27,10 @@ export const CART_URLS = {
 export const RECOMENDED_URLS = {
 	ALL_RECOMENDED: BASE + 'recomended/all-recomendedItems'
 }
+export const ORDERS_URLS = {
+	ALL_ORDERS: BASE + 'orders/all-orders/',
+	ORDER_BY_ID: BASE + 'orders/orderById/',
+	CREATE_ORDER: BASE + 'orders/create-order/',
+	COMPLETE_ORDER: BASE + 'orders/complete-order/'
+}
 

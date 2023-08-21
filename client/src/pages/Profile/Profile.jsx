@@ -8,9 +8,11 @@ import { auth } from '../../config/firebase.config';
 import Text from '../../components/text/Text';
 import { AuthContext } from '../../context/Auth.context';
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
 	const { currentUser } = useContext(AuthContext);
+	const navigate = useNavigate();
 	return (
 		<PageComponent isBack={true}>
 			<Secondaryheader url={'/'} />
@@ -20,6 +22,7 @@ const Profile = () => {
 				fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
 				text={`Username: ${currentUser.userName}`}
 			/>
+			<p onClick={() => navigate(`/orders/${currentUser._id}`)}>Orders</p>
 			<PrimaryButton
 				align={MEASUREMENTS.ALIGN.CENTER}
 				color={COLORS.MAIN}

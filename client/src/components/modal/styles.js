@@ -1,13 +1,37 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { COLORS } from '../../constants/colors';
 
+
+const fadeIn = keyframes`
+  0% {
+    transform: translateY(-100%) translateX(-50%);
+	opacity: 0;
+  }
+  20% {
+	opacity: 1;
+    transform: translateY(0)  translateX(-50%);
+  }
+  60% {
+	opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+  80% {
+	opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+  100% {
+	opacity: 0;
+    transform: translateY(-100%) translateX(-50%);
+  }
+`;
+
 const StyledModal = styled.div`
-	position: fixed;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	top: 0;
-	left: ${({ popup }) => {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: ${({ popup }) => {
 		if (!popup) { return '0' } else { return '50%' }
 	}};
 
@@ -20,13 +44,15 @@ const StyledModal = styled.div`
 	width: ${({ popup }) => {
 		if (!popup) { return '100vw' } else { return 'fit-content' }
 	}};
-	background-color: rgb(0,0,0,0.8);
+  background-color: rgba(255, 255, 255, 0.6);
+  z-index: 100;
+  animation: ${fadeIn} 4.5s ease-in-out 1 forwards;
 
-	z-index: 100;
+
 `;
 
 const StyledModalContainer = styled.div`
-background-color: ${COLORS.BLACK_TRANSPARENT};
+background-color: ${COLORS.MAIN};
 border: 2px solid ${COLORS.MAIN};
 padding: 1rem;
 `

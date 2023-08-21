@@ -1,1 +1,1 @@
-export const MAIN_COORDENATES = [40.416838, -3.704278]
+export const MAIN_COORDENATES = [-3.704277, 40.417023]

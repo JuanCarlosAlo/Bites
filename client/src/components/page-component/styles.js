@@ -16,9 +16,11 @@ const StyledPage = styled.div`
 	max-width: 1080px;
     margin-left: auto;
     margin-right: auto;
+	overflow-y: scroll;
 	@media screen and (min-width: 768px){
 		padding-top: ${MEASUREMENTS.PADDING.SECONDARY_HEADER.DESKTOP};
 	}
+
 `;
 
 

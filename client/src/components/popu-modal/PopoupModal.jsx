@@ -1,4 +1,7 @@
 import { useEffect } from 'react';
+import Text from '../text/Text';
+import { MEASUREMENTS } from '../../constants/measurements';
+import { COLORS } from '../../constants/colors';
 
 const PopupModal = ({ setContent }) => {
 	useEffect(() => {
@@ -13,7 +16,12 @@ const PopupModal = ({ setContent }) => {
 
 	return (
 		<div>
-			<p>Your order has been completed!</p>
+			<Text
+				align={MEASUREMENTS.ALIGN.CENTER}
+				color={COLORS.WHITE}
+				fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
+				text={'Your order has been completed'}
+			/>
 		</div>
 	);
 };
