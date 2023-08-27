@@ -6,7 +6,6 @@ import { MEASUREMENTS } from '../../constants/measurements';
 import { COLORS } from '../../constants/colors';
 import AddToCartButton from '../../components/add-to-cart-button/AddToCartButton';
 import { StyledDescription, StyledItemInfo, StyledPrice } from './styles';
-import CartButton from '../../components/cart-button/CartButton';
 
 const ItemInfo = () => {
 	const { state } = useLocation();
@@ -42,7 +41,6 @@ const ItemInfo = () => {
 				</StyledDescription>
 				<AddToCartButton itemId={state._id} details={true} />
 			</StyledItemInfo>
-			<CartButton />
 		</PageComponent>
 	);
 };

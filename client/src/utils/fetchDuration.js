@@ -1,3 +1,4 @@
+
 import { OPEN_ROUTE_API } from "../constants/headers";
 import { MAIN_COORDENATES } from "../constants/mainCoordenates";
 import { METHODS } from "../constants/methods";
@@ -30,8 +31,8 @@ export const fetchDuration = async (coordinates, id) => {
 
     try {
         const responseData = await fetchData(url, options);
-
-        return responseData;
+        const remainingTime = responseData.durations[0][1]
+        return remainingTime;
     } catch (error) {
         console.error('Error al obtener coordenadas:', error);
         throw error;

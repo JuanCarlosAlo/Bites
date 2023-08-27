@@ -4,6 +4,7 @@ import { METHODS } from "../constants/methods";
 import { ORDERS_URLS } from "../constants/urls";
 
 const fetchData = async (url, options) => {
+
     try {
         const response = await fetch(url, options);
         const data = await response.json();
@@ -15,6 +16,7 @@ const fetchData = async (url, options) => {
 };
 
 export const fetchOrderCompletion = async (userId, orderId) => {
+    if (!userId || !orderId) return
     const url = ORDERS_URLS.COMPLETE_ORDER + userId;
     const options = {
         method: METHODS.POST,

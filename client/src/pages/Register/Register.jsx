@@ -39,6 +39,7 @@ const Register = () => {
 	if (currentUser) return <Navigate to={'/'} />;
 	if (loading) return <LoadingPage />;
 	if (error) return <ErrorPage />;
+
 	return (
 		<PageComponent isBack={true}>
 			<Secondaryheader url={'/'} />
@@ -65,6 +66,14 @@ const Register = () => {
 					register={register}
 					type={'password'}
 				/>
+				<InputContainer
+					errors={errors}
+					formValidation={FORM_VALIDATIONS.address}
+					keyForm={'address'}
+					label={'Address'}
+					register={register}
+					type={'address'}
+				/>
 
 				<PrimaryButton text={'Register'} color={COLORS.MAIN} />
 			</form>
@@ -87,7 +96,7 @@ const Register = () => {
 
 const onSubmit = async (formData, e, setFetchInfo, data, setFirebaseErrors) => {
 	e.preventDefault();
-	const { email, password } = formData;
+	const { email, password, address } = formData;
 	const emailUsed = data.find(user => user.email === email);
 	console.log(data);
 	if (!emailUsed) {
@@ -99,6 +108,7 @@ const onSubmit = async (formData, e, setFetchInfo, data, setFirebaseErrors) => {
 			);
 
 			const userName = getInitialUsername(email);
+
 			await setFetchInfo({
 				url: USERS_URLS.CREATE_USER,
 				options: {
@@ -107,6 +117,7 @@ const onSubmit = async (formData, e, setFetchInfo, data, setFirebaseErrors) => {
 						_id: userRegistered.user.uid,
 						userName,
 						email,
+						address,
 						...USER_DEFAULT_VALUES
 					}),
 					headers: HEADERS

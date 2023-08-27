@@ -15,15 +15,17 @@ const ItemSecondaryContainer = ({ item }) => {
 			/>
 			<Text
 				align={MEASUREMENTS.ALIGN.LEFT}
-				color={COLORS.SECONDARY}
+				color={COLORS.MAIN}
 				fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
 				text={`${item.price}$`}
+				nofullwidth={true}
 			/>
 			<Text
 				align={MEASUREMENTS.ALIGN.LEFT}
-				color={COLORS.SECONDARY}
+				color={COLORS.MAIN}
 				fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
 				text={`X${item.amount}`}
+				nofullwidth={true}
 			/>
 		</StyledSecondaryItemContainer>
 	);

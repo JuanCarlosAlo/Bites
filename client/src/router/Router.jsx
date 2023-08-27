@@ -15,6 +15,8 @@ import ItemInfo from '../pages/ItemInfo/ItemInfo';
 import Address from '../pages/Address/Address';
 import Checkout from '../pages/Checkout/Checkout';
 import Orders from '../pages/Orders/Orders';
+import EditProfile from '../pages/EditProfile/EditProfile';
+import Review from '../pages/Review/Review';
 
 const Router = () => {
 	return (
@@ -22,18 +24,20 @@ const Router = () => {
 			<Route>
 				<Route path='/' element={<Layout />}>
 					<Route index element={<Home />} />
-					<Route path={'main'} element={<Main />} />
-					<Route path={'appetizers'} element={<Appetizers />} />
-					<Route path={'snacks'} element={<Snacks />} />
-					<Route path={'drinks'} element={<Drinks />} />
-					<Route path={'register'} element={<Register />} />
-					<Route path={'login'} element={<Login />} />
-					<Route path={'profile'} element={<Profile />} />
-					<Route path={'cart'} element={<Cart />} />
-					<Route path={'item/:id'} element={<ItemInfo />} />
-					<Route path={'address'} element={<Address />} />
-					<Route path={'checkout'} element={<Checkout />} />
-					<Route path={'orders/:id'} element={<Orders />} />
+					<Route path={'/main'} element={<Main />} />
+					<Route path={'/appetizers'} element={<Appetizers />} />
+					<Route path={'/snacks'} element={<Snacks />} />
+					<Route path={'/drinks'} element={<Drinks />} />
+					<Route path={'/register'} element={<Register />} />
+					<Route path={'/login'} element={<Login />} />
+					<Route path={'/profile'} element={<Profile />} />
+					<Route path={'/edit-profile'} element={<EditProfile />} />
+					<Route path={'/cart'} element={<Cart />} />
+					<Route path={'/item/:id'} element={<ItemInfo />} />
+					<Route path={'/address'} element={<Address />} />
+					<Route path={'/checkout'} element={<Checkout />} />
+					<Route path={'/orders/:id'} element={<Orders />} />
+					<Route path={'/review'} element={<Review />} />
 				</Route>
 			</Route>
 		</Routes>

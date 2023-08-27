@@ -12,6 +12,8 @@ const OrderSchema = mongoose.Schema(
                 coordinates: Array,
                 address: String,
                 items: Array,
+                deliveryTime: Number,
+                remainingTime: Number,
                 completed: Boolean
             }
         ]

@@ -9,6 +9,9 @@ height: 100%;
 width: 100%;
 padding-left: 10px;
 overflow-y: scroll;
+@media screen and (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr); 
+}
 `
 
 export { StyledPageColumnsContainer }

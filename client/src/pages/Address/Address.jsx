@@ -7,17 +7,21 @@ import PrimaryButton from '../../components/primary-button/PrimaryButton';
 import { MEASUREMENTS } from '../../constants/measurements';
 import { COLORS } from '../../constants/colors';
 import Secondaryheader from '../../components/secondary-header/SecondaryHeader';
+import { AuthContext } from '../../context/Auth.context';
+import { useContext } from 'react';
+import { v4 } from 'uuid';
 
 const Address = () => {
 	const { state } = useLocation();
-	const navigate = useNavigate();
-	if (!state) return <Navigate to={'/'} />;
+	const { currentUser } = useContext(AuthContext);
 	const {
 		handleSubmit,
 		register,
 		formState: { errors }
 	} = useForm({ mode: 'onBlur' });
-	console.log(state);
+
+	const navigate = useNavigate();
+	if (!state) return <Navigate to={'/'} />;
 	return (
 		<PageComponent isBack={true}>
 			<Secondaryheader url={'/cart'} />
@@ -31,6 +35,9 @@ const Address = () => {
 					<input
 						type='text'
 						name='recipient'
+						defaultValue={
+							currentUser.userName !== 'none' ? currentUser.userName : ''
+						}
 						{...register('recipient', FORM_VALIDATIONS.recipient)}
 					/>
 					<p>{errors?.recipient?.message}</p>
@@ -40,6 +47,7 @@ const Address = () => {
 					<input
 						type='text'
 						name='address'
+						defaultValue={currentUser.address ? currentUser.address : ''}
 						{...register('address', FORM_VALIDATIONS.address)}
 					/>
 					<p>{errors?.address?.message}</p>
@@ -63,7 +71,7 @@ const onSubmit = async (formData, e, state, navigate) => {
 	const coordinates = await fetchCoordinates(address);
 
 	navigate('/checkout', {
-		state: { recipient, coordinates, address, items: [...state] }
+		state: { _id: v4(), recipient, coordinates, address, items: [...state] }
 	});
 };
 

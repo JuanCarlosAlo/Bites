@@ -27,6 +27,7 @@ const mainRoutes = require('./routes/main.routes');
 const CartRoutes = require('./routes/cart.routes');
 const RecomendedRoutes = require('./routes/recomended.routes');
 const ordersRoutes = require('./routes/orders.routes');
+const reviewsRoutes = require('./routes/reviews.routes');
 
 // Middlewares para cliente
 app.use(cors());
@@ -73,6 +74,7 @@ app.use("/main", mainRoutes);
 app.use("/cart", CartRoutes);
 app.use("/recomended", RecomendedRoutes);
 app.use("/orders", ordersRoutes);
+app.use("/reviews", reviewsRoutes);
 
 
 // Inicia el servidor

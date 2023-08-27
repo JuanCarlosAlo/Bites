@@ -22,7 +22,8 @@ flex-wrap: wrap;
 	align-items: center;
 
 	justify-content: ${({ url }) => {
-		if (url) { return 'flex-star' } else { return 'space-evenly' }
+
+		if (url) { return 'space-between' } else { return 'space-evenly' }
 	}};
 	padding-left:calc(${MEASUREMENTS.PADDING.MOBILE_OUTSIDE} * 2);
 	padding-right:calc(${MEASUREMENTS.PADDING.MOBILE_OUTSIDE} * 2);

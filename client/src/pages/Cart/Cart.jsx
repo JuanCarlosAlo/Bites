@@ -15,6 +15,7 @@ import { COLORS } from '../../constants/colors';
 import TotalPrice from '../../components/total-price/TotalPrice';
 import PrimaryButton from '../../components/primary-button/PrimaryButton';
 import { NavLink } from 'react-router-dom';
+import { StyledRegisterNoteContainer } from './styles';
 
 const Cart = () => {
 	const { cartItems } = useContext(CartContext);
@@ -46,6 +47,7 @@ const Cart = () => {
 	if (data.length === 0)
 		return (
 			<PageComponent>
+				<Secondaryheader url={'/'} />
 				<Text
 					align={MEASUREMENTS.ALIGN.CENTER}
 					color={COLORS.MAIN}
@@ -70,17 +72,33 @@ const Cart = () => {
 					/>
 				))}
 			</PageColumnsContainer>
+			<StyledRegisterNoteContainer>
+				<Text
+					align={MEASUREMENTS.ALIGN.CENTER}
+					color={COLORS.MAIN}
+					fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TEXT}
+					text={'If you want to save your order please register'}
+					nofullwidth={true}
+				/>
+				<NavLink to={'/register'}>
+					<Text
+						align={MEASUREMENTS.ALIGN.CENTER}
+						color={COLORS.MAIN}
+						fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TEXT}
+						text={'Here'}
+						nofullwidth={true}
+					/>
+				</NavLink>
+			</StyledRegisterNoteContainer>
 			<TotalPrice data={data} />
 			<PrimaryButton
 				align={MEASUREMENTS.ALIGN.CENTER}
-				bgcolor={COLORS.WHITE}
-				color={COLORS.MAIN}
+				bgcolor={COLORS.TERCIARY}
+				color={COLORS.WHITE}
 				url={'/address'}
 				state={data}
 				text={'Checkout'}
 			/>
-			<p>If you want to save your order please register</p>
-			<NavLink to={'/register'}>Here</NavLink>
 		</PageComponent>
 	);
 };

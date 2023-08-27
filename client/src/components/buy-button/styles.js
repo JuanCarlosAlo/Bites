@@ -7,6 +7,7 @@ align-items: center;
 justify-content: center;
 background-color: ${COLORS.TERCIARY};
 cursor: pointer;
+gap: 0.5rem;
 width: 100%;
 `
 

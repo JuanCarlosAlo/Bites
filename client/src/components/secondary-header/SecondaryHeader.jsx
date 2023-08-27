@@ -7,7 +7,7 @@ import {
 	StyledSecondaryHeaderContainer
 } from './styles';
 
-const Secondaryheader = ({ url, text, state }) => {
+const Secondaryheader = ({ url, text, state, secondaryUrl }) => {
 	return (
 		<StyledSecondaryHeader url={url}>
 			<StyledSecondaryHeaderContainer url={url}>
@@ -26,14 +26,25 @@ const Secondaryheader = ({ url, text, state }) => {
 						))}
 					</>
 				) : (
-					<SecondaryButton
-						align={MEASUREMENTS.ALIGN.RIGHT}
-						color={COLORS.MAIN}
-						url={url}
-						text={'BACK'}
-						state={state}
-						border={true}
-					/>
+					<>
+						<SecondaryButton
+							align={MEASUREMENTS.ALIGN.RIGHT}
+							color={COLORS.MAIN}
+							url={url}
+							text={'BACK'}
+							state={state}
+							border={true}
+						/>
+						{text && (
+							<SecondaryButton
+								align={MEASUREMENTS.ALIGN.RIGHT}
+								color={COLORS.MAIN}
+								url={secondaryUrl}
+								text={text}
+								border={true}
+							/>
+						)}
+					</>
 				)}
 			</StyledSecondaryHeaderContainer>
 		</StyledSecondaryHeader>

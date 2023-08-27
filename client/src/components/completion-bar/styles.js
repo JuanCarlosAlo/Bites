@@ -1,11 +1,15 @@
 import styled from "styled-components";
 import { COLORS } from "../../constants/colors";
 
+const CompletionBarContainer = styled.div`
+width: 100%;
+`
+
 const StyledCompletionBar = styled.div`
 position: relative;
-width: 350px;
+width: 100%;
 height: 10px;
-background-color: ${COLORS.MAIN};
+background-color: ${COLORS.WHITE};
 
 `
 const StyledBar = styled.div.attrs(props => ({
@@ -17,7 +21,7 @@ position: absolute;
 left: 0;
 top: 0;
 height: 10px;
-background-color: ${COLORS.SECONDARY};
+background-color: ${COLORS.TERCIARY};
 `
 
-export { StyledCompletionBar, StyledBar }
+export { StyledCompletionBar, StyledBar, CompletionBarContainer }

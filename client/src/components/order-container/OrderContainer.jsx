@@ -1,39 +1,46 @@
 import CompletionBar from '../completion-bar/CompletionBar';
 import { getDate } from '../../utils/getDate';
-import { useFetch } from '../../hooks/useFetch';
 
-import { METHODS } from '../../constants/methods';
-import { MAIN_COORDENATES } from '../../constants/mainCoordenates';
-import { OPEN_ROUTE_API } from '../../constants/headers';
-import LoadingPage from '../loading-page/loading-page';
-import ErrorPage from '../error-page/ErrorPage';
+import ItemSecondaryContainer from '../item-secondary-container/ItemSecondaryContainer';
+
+import { MEASUREMENTS } from '../../constants/measurements';
+import { COLORS } from '../../constants/colors';
+import PrimaryButton from '../primary-button/PrimaryButton';
+import { getRemainingTimeOrder } from '../../utils/getRemainingTimeOrder';
+import { StyledOrderButtonsContainer, StyledOrderContainer } from './styles';
+import Text from '../text/Text';
 
 const OrderContainer = ({ order, currentUser }) => {
-	const { data, loading, error } = useFetch({
-		url: 'https://api.openrouteservice.org/v2/matrix/driving-car',
-		options: {
-			method: METHODS.POST,
-			body: JSON.stringify({
-				locations: [order.coordinates, MAIN_COORDENATES],
-				id: order._id,
-				metrics: ['duration'],
-				resolve_locations: false
-			}),
-			headers: OPEN_ROUTE_API
-		}
-	});
-	if (loading) return <LoadingPage />;
-	if (error) return <ErrorPage />;
+	const fullRemainingTime = getRemainingTimeOrder(order.deliveryTime);
 
 	return (
-		<div>
-			<p>{getDate(order.date)}</p>
-			<CompletionBar
-				initialDuration={order.completed ? 0 : data.durations[0][1]}
-				userId={currentUser._id}
-				orderId={order._id}
+		<StyledOrderContainer>
+			<StyledOrderButtonsContainer>
+				<Text
+					align={MEASUREMENTS.ALIGN.LEFT}
+					color={COLORS.WHITE}
+					fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
+					text={getDate(order.date)}
+				/>
+				<CompletionBar
+					fullRemainingTime={fullRemainingTime}
+					orderTime={order.remainingTime}
+					userId={currentUser._id}
+					orderId={order._id}
+				/>
+			</StyledOrderButtonsContainer>
+			{order.items.map(item => (
+				<ItemSecondaryContainer key={item._id} item={item} />
+			))}
+			<PrimaryButton
+				align={MEASUREMENTS.ALIGN.CENTER}
+				bgcolor={COLORS.TERCIARY}
+				color={COLORS.WHITE}
+				text={'Review Items'}
+				url={'/review'}
+				state={order}
 			/>
-		</div>
+		</StyledOrderContainer>
 	);
 };
 

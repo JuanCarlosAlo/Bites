@@ -12,6 +12,7 @@ const StyledPage = styled.div`
 	padding-top:  ${({ isBack }) => {
 		if (isBack) { return `${MEASUREMENTS.PADDING.SECONDARY_HEADER.DESKTOP};` } else { return ` ${MEASUREMENTS.PADDING.SECONDARY_HEADER.MOBILE}` }
 	}}; 
+	padding-left: 10px;
 
 	max-width: 1080px;
     margin-left: auto;

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import { auth } from '../config/firebase.config';
 import { AuthContext } from '../context/Auth.context';
+import { USERS_URLS } from '../constants/urls';
 
 export const AuthProvider = ({ children }) => {
 	const [currentUser, setCurrentUser] = useState(null);
@@ -10,11 +11,8 @@ export const AuthProvider = ({ children }) => {
 	useEffect(() => {
 		const unsubscribe = auth.onAuthStateChanged(async user => {
 			if (user) {
-				console.log(user);
-				// El usuario está autenticado
 				await getUserInfoFromMongo(user, setCurrentUser, attempts, setAttempts);
 			} else {
-				// El usuario no está autenticado
 				setCurrentUser(null);
 			}
 			setLoadingFirebase(false);
@@ -62,11 +60,11 @@ const getUserInfoFromMongo = async (
 	setAttempts
 ) => {
 	try {
-		const response = await fetch(
-			`http://localhost:3000/users/userById/${user.uid}`
-		);
+		const response = await fetch(`${USERS_URLS.GET_USER_BY_ID}${user.uid}`);
+
 		if (response.ok) {
 			const userInfo = await response.json();
+
 			setCurrentUser({
 				...user,
 				...userInfo

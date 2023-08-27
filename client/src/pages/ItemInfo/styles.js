@@ -18,6 +18,7 @@ padding: 1rem;
 
 const StyledPrice = styled.div`
 background-color: ${COLORS.SECONDARY};
+
 margin-bottom: 4rem;
 
 `

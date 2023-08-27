@@ -7,6 +7,7 @@ import OrderContainer from '../../components/order-container/OrderContainer';
 import { useParams } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/Auth.context';
+import Secondaryheader from '../../components/secondary-header/SecondaryHeader';
 
 const Orders = () => {
 	const { currentUser, loadingFirebase } = useContext(AuthContext);
@@ -19,6 +20,7 @@ const Orders = () => {
 
 	return (
 		<PageComponent isBack={true}>
+			<Secondaryheader url={'/'} />
 			{data.orders.map(order => (
 				<OrderContainer
 					key={order._id}

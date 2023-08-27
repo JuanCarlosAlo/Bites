@@ -19,6 +19,7 @@ const AddToCartButton = ({ itemId, details }) => {
 					color={COLORS.WHITE}
 					fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TITLE}
 					text={'Add to cart'}
+					nofullwidth={true}
 				/>
 				<StyledImg src='/images/add-to-cart.svg' alt='' />
 			</StyledAddToCartButtonDetails>

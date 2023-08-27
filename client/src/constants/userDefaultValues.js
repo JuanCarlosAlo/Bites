@@ -1,6 +1,4 @@
 export const USER_DEFAULT_VALUES = {
-	journalsEntries: [],
-	tasks: [],
-	chats: [],
+	orders: [],
 	type: 'user'
 };

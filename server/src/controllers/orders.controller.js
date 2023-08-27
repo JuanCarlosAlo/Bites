@@ -42,7 +42,7 @@ controller.completeOrder = async (req, res) => {
 controller.createOrder = async (req, res) => {
 
   try {
-    const { recipient, coordinates, address, items, completed, userId } = req.body;
+    const { recipient, coordinates, address, items, completed, userId, _id, deliveryTime, remainingTime } = req.body;
     const currentUser = await UserModel.findById(userId);
     let orderCollection = await OrderModel.findOne({ userId: userId });
 
@@ -57,12 +57,14 @@ controller.createOrder = async (req, res) => {
     }
 
     const newOrder = {
-      _id: v4(),
+      _id,
       date: new Date(),
       recipient,
       coordinates,
       address,
       items,
+      deliveryTime,
+      remainingTime,
       completed
     };
 
@@ -77,7 +79,7 @@ controller.createOrder = async (req, res) => {
       currentUser.orders.unshift(orderCollection._id);
       await currentUser.save();
     }
-    return res.status(201).send({ message: "Order created successfully" });
+    return res.status(200).send({ message: "Order created successfully" });
   } catch (error) {
     if (error.code === 11000) {
       return res.status(409).send({ error: "order already exists" });

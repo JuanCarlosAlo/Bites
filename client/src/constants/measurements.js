@@ -30,17 +30,17 @@ export const MEASUREMENTS = {
 		TITLE: {
 			MOBILE: '1.4rem',
 			TABLET: '1.5rem',
-			DESKTOP: '1.7rem'
+			DESKTOP: '1.5rem'
 		},
 		SUBTITLES: {
 			MOBILE: '1rem',
 			TABLET: '1.2rem',
-			DESKTOP: '1.4rem'
+			DESKTOP: '1.2rem'
 		},
 		TEXT: {
 			MOBILE: '0.8rem',
 			TABLET: '1rem',
-			DESKTOP: '1.2rem'
+			DESKTOP: '1rem'
 		},
 		KEY: {
 			TITLE: 'TITLE',
@@ -57,8 +57,8 @@ export const MEASUREMENTS = {
 		HEIGHT: '40px'
 	},
 	ICONS: {
-		HEIGHT: '20px',
-		WIDTH: '20px'
+		HEIGHT: '30px',
+		WIDTH: '30px'
 	},
 	PAGES: {
 		HEIGHT: '100vh'

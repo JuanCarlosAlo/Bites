@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/Auth.context';
 import LoadingPage from '../loading-page/loading-page';
-
+import CartButton from '../../components/cart-button/CartButton';
+import Icon from '../icon/Icon';
 const Header = () => {
 	const { currentUser, loadingFirebase } = useContext(AuthContext);
 	if (loadingFirebase) return <LoadingPage />;
@@ -16,14 +17,27 @@ const Header = () => {
 				{currentUser ? (
 					<nav>
 						<StyledMenu>
+							<li>
+								<CartButton />
+							</li>
+							<Link to={`/orders/${currentUser._id}`}>
+								<li>
+									<Icon img={'/images/orders.png'} />
+								</li>
+							</Link>
 							<Link to={'/profile'}>
-								<li>{currentUser.userName}</li>
+								<li>
+									<Icon img={'/images/gear.svg'} />
+								</li>
 							</Link>
 						</StyledMenu>
 					</nav>
 				) : (
 					<nav>
 						<StyledMenu>
+							<li>
+								<CartButton />
+							</li>
 							<Link to={'/register'}>
 								<li>Register</li>
 							</Link>

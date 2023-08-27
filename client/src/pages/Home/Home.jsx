@@ -1,4 +1,3 @@
-import CartButton from '../../components/cart-button/CartButton';
 import ErrorPage from '../../components/error-page/ErrorPage';
 import ItemContainer from '../../components/item-container/ItemContainer';
 import LoadingPage from '../../components/loading-page/loading-page';
@@ -18,7 +17,6 @@ const Home = () => {
 	const recomendedItems = getRecomendedItems(data);
 	return (
 		<PageComponent>
-			<CartButton />
 			<Secondaryheader />
 
 			<PageColumnsContainer>

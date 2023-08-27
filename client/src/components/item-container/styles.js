@@ -8,11 +8,12 @@ flex-direction: column;
 justify-content: space-between;
 align-items: center;
 height: 230px;
-max-width: 300px;
+max-width: 250px;
 
 `
 
 const StyledImgItem = styled.img`
+
 width: 150px;
 height: 150px;
 margin-left: auto;
@@ -44,6 +45,9 @@ background-color: ${COLORS.MAIN};
 `
 
 const StyledNumberItem = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
 position: absolute;
 top: 0;
 right: 0;

@@ -4,6 +4,7 @@ export const USERS_URLS = {
 	ALL_USERS: BASE + 'users/all-users',
 	GET_USER_BY_ID: BASE + 'users/userById/',
 	CREATE_USER: BASE + 'users/create-user',
+	EDIT_USER: BASE + 'users/edit-user/',
 	DELETE_USER: BASE + 'users/delete-user/'
 };
 
@@ -34,3 +35,6 @@ export const ORDERS_URLS = {
 	COMPLETE_ORDER: BASE + 'orders/complete-order/'
 }
 
+export const REVIEW_URLS = {
+	CREATE_REVIEW: BASE + 'reviews/create-review'
+}

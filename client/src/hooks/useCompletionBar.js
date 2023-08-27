@@ -1,43 +1,46 @@
 import { useEffect, useState } from "react";
 import { fetchOrderCompletion } from "../utils/fetchOrderCompletion";
 
-export const useCompletionBar = (initialDuration, userId, orderId) => {
-
-
-    const [duration, setDuration] = useState(initialDuration);
-    const [remainingTime, setRemainingTime] = useState(
-        localStorage.getItem(`remainingTime_${orderId}`) || duration
-    );
+export const useCompletionBar = (fullRemainingTime, userId, orderId, orderTime) => {
+    const [remainingTime, setRemainingTime] = useState(fullRemainingTime);
     const [completionPercentage, setCompletionPercentage] = useState(
-        ((duration - remainingTime) / duration) * 100 || 100
+        ((orderTime - fullRemainingTime) / orderTime) * 100 || 100
     );
 
     useEffect(() => {
-        setDuration(initialDuration);
-        setRemainingTime(
-            localStorage.getItem(`remainingTime_${orderId}`) || initialDuration
-        );
-    }, [initialDuration, orderId]);
+        setRemainingTime(fullRemainingTime);
+    }, [fullRemainingTime, orderId]);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            if (!remainingTime) return
-            if (remainingTime > 0) {
-                setRemainingTime(prevRemainingTime => prevRemainingTime - 1);
-                setCompletionPercentage(((duration - remainingTime) / duration) * 100);
-                localStorage.setItem(`remainingTime_${orderId}`, remainingTime - 1);
-            } else {
-                clearInterval(interval);
-                localStorage.removeItem(`remainingTime_${orderId}`);
-                fetchOrderCompletion(userId, orderId);
-            }
+            setRemainingTime(prevRemainingTime => {
+
+                if (prevRemainingTime > 0) {
+                    const newRemainingTime = prevRemainingTime - 1;
+                    const newCompletionPercentage = ((orderTime - newRemainingTime) / orderTime) * 100;
+
+
+                    const safeCompletionPercentage = Math.min(newCompletionPercentage, 100);
+                    console.log(safeCompletionPercentage)
+                    setCompletionPercentage(safeCompletionPercentage);
+
+                    return newRemainingTime;
+                } else {
+                    clearInterval(interval);
+                    fetchOrderCompletion(userId, orderId);
+                    setCompletionPercentage(100)
+                    return 0;
+                }
+            });
         }, 1000);
 
         return () => clearInterval(interval);
-    }, [remainingTime, duration, userId, orderId]);
+    }, [orderTime, userId, orderId]);
 
     return {
         remainingTime,
         completionPercentage,
     };
-}
+};
+
+

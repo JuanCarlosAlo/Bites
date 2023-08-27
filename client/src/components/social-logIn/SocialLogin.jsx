@@ -24,13 +24,14 @@ const registerWithGoogle = async setFetchInfo => {
 		const credential = GoogleAuthProvider.credentialFromResult(result);
 		const userName = getInitialUsername(result.user.email);
 		console.log(credential);
-		setFetchInfo({
+		await setFetchInfo({
 			url: USERS_URLS.CREATE_USER,
 			options: {
 				method: METHODS.POST,
 				body: JSON.stringify({
 					_id: result.user.uid,
 					userName,
+					address: 'none',
 					email: result.user.email,
 					...USER_DEFAULT_VALUES
 				}),

@@ -1,25 +1,37 @@
 import { getRemainingTime } from '../../utils/getRemainingTime';
-import { StyledBar, StyledCompletionBar } from './styles';
+import {
+	CompletionBarContainer,
+	StyledBar,
+	StyledCompletionBar
+} from './styles';
 
 import { useCompletionBar } from '../../hooks/useCompletionBar';
+import Text from '../text/Text';
+import { MEASUREMENTS } from '../../constants/measurements';
+import { COLORS } from '../../constants/colors';
 
-const CompletionBar = ({ initialDuration, userId, orderId }) => {
-	console.log(initialDuration);
-	const { remainingTime, completionPercentage } = useCompletionBar(
-		initialDuration,
+const CompletionBar = ({ fullRemainingTime, userId, orderId, orderTime }) => {
+	const { completionPercentage, remainingTime } = useCompletionBar(
+		fullRemainingTime,
 		userId,
-		orderId
+		orderId,
+		orderTime
 	);
-	console.log(completionPercentage);
+
 	return (
-		<div>
-			<p>
-				{remainingTime === 0 ? 'Completed' : getRemainingTime(remainingTime)}
-			</p>
+		<CompletionBarContainer>
+			<Text
+				align={MEASUREMENTS.ALIGN.LEFT}
+				color={COLORS.WHITE}
+				fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
+				text={
+					remainingTime <= 0 ? 'Completed' : getRemainingTime(remainingTime)
+				}
+			/>
 			<StyledCompletionBar>
 				<StyledBar completionPercentage={completionPercentage}></StyledBar>
 			</StyledCompletionBar>
-		</div>
+		</CompletionBarContainer>
 	);
 };
 
