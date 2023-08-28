@@ -33,7 +33,7 @@ cursor: ${({ inCart }) => {
 `
 const StyledStarsContainer = styled.div`
 position: absolute;
-top: 60%;
+top: 55%;
 left: 0;
 display: flex;
 align-items: center;
@@ -41,7 +41,9 @@ justify-content: center;
 gap: 0.2rem;
 padding: 0.2rem;
 background-color: ${COLORS.MAIN};
-
+@media screen and (min-width: 1024px){
+    top: 60%;
+}
 `
 
 const StyledPrice = styled.div`
