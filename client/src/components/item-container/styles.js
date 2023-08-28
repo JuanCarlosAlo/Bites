@@ -14,6 +14,13 @@ margin-left: auto;
 margin-right: auto;
 `
 
+const StyledStar = styled.img`
+
+width: 40px;
+height: 40px;
+
+`
+
 const StyledImgItem = styled.img`
 
 width: 150px;
@@ -63,4 +70,4 @@ const StyledCuantityButton = styled.div`
 cursor: pointer;
 `
 
-export { StyledImgItem, StyledPrice, StyledItem, StyledTitle, StyledNumberItem, StyledCuantityButton }
+export { StyledImgItem, StyledPrice, StyledItem, StyledTitle, StyledNumberItem, StyledCuantityButton, StyledStar }
