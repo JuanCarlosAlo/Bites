@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }) => {
 		return () => {
 			socket.disconnect();
 		};
-	}, [currentUser]); // Agrega currentUser como dependencia del useEffect
+	}, [currentUser]);
 
 	return (
 		<AuthContext.Provider value={{ currentUser, loadingFirebase }}>
@@ -75,7 +75,6 @@ const getUserInfoFromMongo = async (
 		}
 	} catch (error) {
 		if (attempts < 5) {
-			// Intenta nuevamente después de un tiempo
 			setTimeout(
 				() =>
 					getUserInfoFromMongo(user, setCurrentUser, attempts + 1, setAttempts),

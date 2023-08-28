@@ -29,7 +29,7 @@ controller.getAllCartItems = async (req, res) => {
       if (foundItem) return foundItem
     });
 
-    // Esperar a que todas las promesas se resuelvan usando Promise.all
+
     const apetizersResults = await Promise.all(allApetizers);
     const mainResults = await Promise.all(allMain);
     const snacksResults = await Promise.all(allSnacks);

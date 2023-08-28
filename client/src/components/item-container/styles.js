@@ -9,7 +9,8 @@ justify-content: space-between;
 align-items: center;
 height: 230px;
 max-width: 250px;
-
+margin-left: auto;
+margin-right: auto;
 `
 
 const StyledImgItem = styled.img`

@@ -71,37 +71,9 @@ controller.deleteUser = async (req, res) => {
   try {
     const userId = req.params.id;
     const currentUser = await UserModel.findById(userId);
-
-    const journalEntriesCount = await JournalsModel.countDocuments({ userId });
-    if (journalEntriesCount > 0) {
-      // Eliminar journalEntries del usuario
-      await JournalsModel.deleteMany({ userId });
-    }
-
-    // Comprobar si existen documentos en notes del usuario
-    const notesCount = await NotesModel.countDocuments({ userId });
-    if (notesCount > 0) {
-      // Eliminar notes del usuario
-      await NotesModel.deleteMany({ userId });
-    }
-
-    // Comprobar si existen documentos en tasks del usuario
-    const tasksCount = await TasksModel.countDocuments({ userId });
-    if (tasksCount > 0) {
-      // Eliminar tasks del usuario
-      await TasksModel.deleteMany({ userId });
-    }
-
-    // Comprobar si existen documentos en chats del usuario
-    const chatsCount = await ChatsModel.countDocuments({ userId });
-    if (chatsCount > 0) {
-      // Eliminar chats del usuario
-      await ChatsModel.deleteMany({ userId });
-    }
-
     await UserModel.findByIdAndRemove(currentUser._id);
     await currentUser.markModified("._id");
-    res.status(200).json({ message: "Usuar elimanated" });
+    res.status(200).json({ message: "User elimanated" });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Error deleting user" });
