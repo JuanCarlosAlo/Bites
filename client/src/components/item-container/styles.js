@@ -33,12 +33,12 @@ cursor: ${({ inCart }) => {
 `
 const StyledStarsContainer = styled.div`
 position: absolute;
-top: 50%;
+top: 60%;
 left: 0;
 display: flex;
 align-items: center;
 justify-content: center;
-gap: 0.5rem;
+gap: 0.2rem;
 background-color: ${COLORS.MAIN};
 
 `
