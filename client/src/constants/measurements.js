@@ -17,7 +17,7 @@ export const MEASUREMENTS = {
 	},
 	PADDING: {
 		SECONDARY_HEADER: {
-			MOBILE: '160px',
+			MOBILE: '150px',
 			DESKTOP: '70px'
 		},
 		MOBILE_OUTSIDE: ' 0.5rem'
