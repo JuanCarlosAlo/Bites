@@ -16,8 +16,8 @@ margin-right: auto;
 
 const StyledStar = styled.img`
 
-width: 40px;
-height: 40px;
+width: 20px;
+height: 20px;
 
 `
 
@@ -38,7 +38,7 @@ left: 0;
 display: flex;
 align-items: center;
 justify-content: center;
-gap: 1rem;
+gap: 0.5rem;
 background-color: ${COLORS.MAIN};
 padding-left: 1rem;
 padding-right: 1rem;
