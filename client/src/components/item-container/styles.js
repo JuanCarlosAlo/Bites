@@ -41,7 +41,7 @@ justify-content: center;
 gap: 0.2rem;
 padding: 0.2rem;
 background-color: ${COLORS.MAIN};
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 768px){
     top: 60%;
 }
 `
