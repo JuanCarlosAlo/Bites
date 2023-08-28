@@ -16,8 +16,8 @@ margin-right: auto;
 
 const StyledStar = styled.img`
 
-width: 20px;
-height: 20px;
+width: 150px;
+height: 15px;
 
 `
 
