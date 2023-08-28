@@ -7,9 +7,9 @@ const { default: mongoose } = require("mongoose");
 const controller = {};
 
 controller.getAllOrders = async (req, res) => {
-  console.log(req.params)
+
   const allOrders = await OrderModel.findOne({ userId: req.params.id });
-  console.log(allOrders)
+
   try {
     res.status(200).send(allOrders);
   } catch (error) {
@@ -69,7 +69,7 @@ controller.createOrder = async (req, res) => {
     };
 
     orderCollection.orders.unshift(newOrder);
-    console.log(orderCollection)
+
     await orderCollection.save();
 
     const existingOrderRef = currentUser.orders.find(
@@ -89,7 +89,7 @@ controller.createOrder = async (req, res) => {
 };
 
 controller.deleteOrder = async (req, res) => {
-  console.log(req.params.id)
+
   try {
     const userId = req.params.id;
     const currentUser = await UserModel.findById(userId);

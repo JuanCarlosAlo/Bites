@@ -39,7 +39,7 @@ controller.createSnack = async (req, res) => {
     });
 
     await newSnack.save();
-    console.log(newSnack);
+
     return res.status(201).send({ message: "Snack created successfully" });
   } catch (error) {
     if (error.code === 11000) {
@@ -50,7 +50,7 @@ controller.createSnack = async (req, res) => {
 };
 
 controller.deleteSnack = async (req, res) => {
-  console.log(req.params.id)
+
   try {
     const userId = req.params.id;
     const currentUser = await UserModel.findById(userId);

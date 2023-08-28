@@ -14,6 +14,9 @@ import { HEADERS } from '../../constants/headers';
 import PrimaryButton from '../../components/primary-button/PrimaryButton';
 import { COLORS } from '../../constants/colors';
 
+import { MEASUREMENTS } from '../../constants/measurements';
+import Title from '../../components/title/Title';
+
 const EditProfile = () => {
 	const { currentUser, loadingFirebase } = useContext(AuthContext);
 	const { data, loading, error, setFetchInfo } = useFetch({
@@ -28,10 +31,15 @@ const EditProfile = () => {
 
 	if (loadingFirebase || loading) return <LoadingPage />;
 	if (error) return <ErrorPage />;
-	console.log(data);
+
 	return (
 		<PageComponent isBack={true}>
 			<Secondaryheader url={'/profile'} />
+			<Title
+				align={MEASUREMENTS.ALIGN.CENTER}
+				fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TITLE}
+				text={'Edit Profile'}
+			/>
 			<form
 				onSubmit={handleSubmit((formData, e) =>
 					onSubmit(formData, e, setFetchInfo, data, currentUser)
@@ -57,7 +65,11 @@ const EditProfile = () => {
 						currentUser.address !== 'none' ? currentUser.address : ''
 					}
 				/>
-				<PrimaryButton text={'Accept'} color={COLORS.MAIN} />
+				<PrimaryButton
+					text={'Accept'}
+					bgcolor={COLORS.TERCIARY}
+					color={COLORS.WHITE}
+				/>
 			</form>
 		</PageComponent>
 	);

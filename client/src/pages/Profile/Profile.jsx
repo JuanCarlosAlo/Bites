@@ -10,6 +10,8 @@ import { AuthContext } from '../../context/Auth.context';
 import { useContext } from 'react';
 
 import LoadingPage from '../../components/loading-page/loading-page';
+import { StyledProfileContainer } from './styles';
+import Title from '../../components/title/Title';
 
 const Profile = () => {
 	const { currentUser, loadingFirebase } = useContext(AuthContext);
@@ -19,18 +21,26 @@ const Profile = () => {
 	return (
 		<PageComponent isBack={true}>
 			<Secondaryheader url={'/'} text={'Edit'} secondaryUrl={'/edit-profile'} />
-			<Text
-				align={MEASUREMENTS.ALIGN.LEFT}
-				color={COLORS.MAIN}
-				fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
-				text={`Username: ${currentUser.userName}`}
+			<Title
+				align={MEASUREMENTS.ALIGN.CENTER}
+				fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TITLE}
+				text={'Profile'}
+				margin={0}
 			/>
-			<Text
-				align={MEASUREMENTS.ALIGN.LEFT}
-				color={COLORS.MAIN}
-				fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
-				text={`Address: ${currentUser.address}`}
-			/>
+			<StyledProfileContainer>
+				<Text
+					align={MEASUREMENTS.ALIGN.LEFT}
+					color={COLORS.MAIN}
+					fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
+					text={`Username: ${currentUser.userName}`}
+				/>
+				<Text
+					align={MEASUREMENTS.ALIGN.LEFT}
+					color={COLORS.MAIN}
+					fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
+					text={`Address: ${currentUser.address}`}
+				/>
+			</StyledProfileContainer>
 			<PrimaryButton
 				align={MEASUREMENTS.ALIGN.CENTER}
 				color={COLORS.WHITE}

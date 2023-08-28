@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { MEASUREMENTS } from '../../constants/measurements';
+
 import { COLORS } from '../../constants/colors';
+import { MEASUREMENTS } from '../../constants/measurements';
 
 
 const StyledInputContainer = styled.div`
@@ -17,11 +18,23 @@ const StyledInputContainer = styled.div`
 const StyledInput = styled.input`
 width: 100%;
 `
+const StyledLabel = styled.label`
+color: ${COLORS.MAIN};
+font-size: ${MEASUREMENTS.FONTS_SIZE.SUBTITLES.MOBILE};
+@media screen and (min-width: 468px){
+  font-size: ${MEASUREMENTS.FONTS_SIZE.SUBTITLES.TABLET};
+  
+}
+@media screen and (min-width: 768px){
+  font-size: ${MEASUREMENTS.FONTS_SIZE.SUBTITLES.TABLET};
+  
+}
+@media screen and (min-width: 1024px){
+  font-size: ${MEASUREMENTS.FONTS_SIZE.SUBTITLES.DESKTOP};
+  
+}
+`
 
-const StyledErrorText = styled.p`
-	margin: 0;
-	font-weight: ${MEASUREMENTS.FONTS_WEIGHT.BOLD};
-`;
 const StyledSelect = styled.select`
   width: 100%;
   height: 35px;
@@ -47,4 +60,4 @@ const StyledSelect = styled.select`
 	}
   }
 `;
-export { StyledInputContainer, StyledErrorText, StyledSelect, StyledInput };
+export { StyledInputContainer, StyledSelect, StyledInput, StyledLabel };

@@ -50,7 +50,7 @@ controller.createDrink = async (req, res) => {
 };
 
 controller.deleteDrink = async (req, res) => {
-  console.log(req.params.id)
+
   try {
     const userId = req.params.id;
     const currentUser = await UserModel.findById(userId);

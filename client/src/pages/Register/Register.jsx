@@ -98,7 +98,7 @@ const onSubmit = async (formData, e, setFetchInfo, data, setFirebaseErrors) => {
 	e.preventDefault();
 	const { email, password, address } = formData;
 	const emailUsed = data.find(user => user.email === email);
-	console.log(data);
+
 	if (!emailUsed) {
 		try {
 			const userRegistered = await createUserWithEmailAndPassword(

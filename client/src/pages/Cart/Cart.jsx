@@ -16,6 +16,7 @@ import TotalPrice from '../../components/total-price/TotalPrice';
 import PrimaryButton from '../../components/primary-button/PrimaryButton';
 import { NavLink } from 'react-router-dom';
 import { StyledRegisterNoteContainer } from './styles';
+import Title from '../../components/title/Title';
 
 const Cart = () => {
 	const { cartItems } = useContext(CartContext);
@@ -48,6 +49,11 @@ const Cart = () => {
 		return (
 			<PageComponent>
 				<Secondaryheader url={'/'} />
+				<Title
+					align={MEASUREMENTS.ALIGN.CENTER}
+					fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TITLE}
+					text={'Cart'}
+				/>
 				<Text
 					align={MEASUREMENTS.ALIGN.CENTER}
 					color={COLORS.MAIN}
@@ -59,9 +65,13 @@ const Cart = () => {
 
 	return (
 		<PageComponent isBack={true}>
+			<Secondaryheader url={'/'} />
+			<Title
+				align={MEASUREMENTS.ALIGN.CENTER}
+				fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TITLE}
+				text={'Cart'}
+			/>
 			<PageColumnsContainer>
-				<Secondaryheader url={'/'} />
-
 				{data.map(item => (
 					<ItemContainer
 						key={item._id}

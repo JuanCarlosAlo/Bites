@@ -5,7 +5,7 @@ const controller = {};
 
 controller.getAllUsers = async (req, res) => {
   const allUsers = await UserModel.find();
-  console.log(allUsers);
+
   try {
     res.status(200).send(allUsers);
   } catch (error) {
@@ -67,7 +67,7 @@ controller.editUser = async (req, res) => {
 };
 
 controller.deleteUser = async (req, res) => {
-  console.log(req.params.id);
+
   try {
     const userId = req.params.id;
     const currentUser = await UserModel.findById(userId);

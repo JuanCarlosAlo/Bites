@@ -22,7 +22,7 @@ const BuyButton = ({ order, setContent, setFetchInfo, initialDuration }) => {
 	const { currentUser, loadingFirebase } = useContext(AuthContext);
 
 	if (loadingFirebase) return <LoadingPage />;
-	console.log(order, initialDuration);
+
 	return (
 		<StyledBuyButton
 			onClick={() =>

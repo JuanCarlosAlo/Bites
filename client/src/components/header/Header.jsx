@@ -9,7 +9,7 @@ import Icon from '../icon/Icon';
 const Header = () => {
 	const { currentUser, loadingFirebase } = useContext(AuthContext);
 	if (loadingFirebase) return <LoadingPage />;
-	console.log(currentUser);
+
 	return (
 		<StyledHeader>
 			<StyledHeaderContainer>

@@ -39,7 +39,7 @@ controller.createMain = async (req, res) => {
     });
 
     await newMain.save();
-    console.log(newMain);
+
     return res.status(201).send({ message: "Main created successfully" });
   } catch (error) {
     if (error.code === 11000) {
@@ -50,7 +50,7 @@ controller.createMain = async (req, res) => {
 };
 
 controller.deleteMain = async (req, res) => {
-  console.log(req.params.id)
+
   try {
     const userId = req.params.id;
     const currentUser = await UserModel.findById(userId);

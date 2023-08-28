@@ -12,7 +12,7 @@ const PrimaryButton = ({
 	state
 }) => {
 	const navigate = useNavigate();
-	console.log(state);
+
 	return (
 		<StyledPrimaryButton
 			color={color}

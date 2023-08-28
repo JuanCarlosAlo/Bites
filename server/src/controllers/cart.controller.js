@@ -38,7 +38,7 @@ controller.getAllCartItems = async (req, res) => {
     allItems.push(...apetizersResults, ...mainResults, ...snacksResults, ...drinksResults);
     allItems = allItems.filter((item) => item !== null && item !== undefined);
 
-    console.log(allItems);
+
     res.status(200).send(allItems);
   } catch (error) {
     res.status(500).send({ error: "Error al leer la base de datos" });

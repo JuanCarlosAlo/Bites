@@ -11,6 +11,7 @@ import { useFetch } from '../../hooks/useFetch';
 import { HEADERS } from '../../constants/headers';
 import { METHODS } from '../../constants/methods';
 import { REVIEW_URLS } from '../../constants/urls';
+import Title from '../../components/title/Title';
 
 const Review = () => {
 	const { state } = useLocation();
@@ -22,6 +23,11 @@ const Review = () => {
 	return (
 		<PageComponent isBack={true}>
 			<Secondaryheader url={'/'} />
+			<Title
+				align={MEASUREMENTS.ALIGN.CENTER}
+				fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TITLE}
+				text={'Review'}
+			/>
 			{state.items.map(item => (
 				<StyledReviewContainer key={item._id}>
 					<StyledReviewImg src={item.img} alt='' />

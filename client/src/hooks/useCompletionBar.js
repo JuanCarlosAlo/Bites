@@ -21,7 +21,7 @@ export const useCompletionBar = (fullRemainingTime, userId, orderId, orderTime) 
 
 
                     const safeCompletionPercentage = Math.min(newCompletionPercentage, 100);
-                    console.log(safeCompletionPercentage)
+
                     setCompletionPercentage(safeCompletionPercentage);
 
                     return newRemainingTime;

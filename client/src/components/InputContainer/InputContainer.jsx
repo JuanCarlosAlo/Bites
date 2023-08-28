@@ -1,7 +1,10 @@
+import { COLORS } from '../../constants/colors';
+import { MEASUREMENTS } from '../../constants/measurements';
+import Text from '../text/Text';
 import {
-	StyledErrorText,
 	StyledInput,
 	StyledInputContainer,
+	StyledLabel,
 	StyledSelect
 } from './styles';
 
@@ -18,7 +21,7 @@ const InputContainer = ({
 	if (options) {
 		return (
 			<StyledInputContainer>
-				<label htmlFor={keyForm}>{label}</label>
+				<StyledLabel htmlFor={keyForm}>{label}</StyledLabel>
 				<StyledSelect
 					name={keyForm}
 					id={keyForm}
@@ -35,13 +38,18 @@ const InputContainer = ({
 						</option>
 					))}
 				</StyledSelect>
-				<StyledErrorText>{errors?.[keyForm]?.message}</StyledErrorText>
+				<Text
+					color={COLORS.TERCIARY}
+					align={MEASUREMENTS.ALIGN.LEFT}
+					fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TEXT}
+					text={errors?.[keyForm]?.message}
+				/>
 			</StyledInputContainer>
 		);
 	} else {
 		return (
 			<StyledInputContainer>
-				<label htmlFor={keyForm}>{label}</label>
+				<StyledLabel htmlFor={keyForm}>{label}</StyledLabel>
 				<StyledInput
 					type={type}
 					name={keyForm}
@@ -49,7 +57,12 @@ const InputContainer = ({
 					{...register(keyForm, formValidation)}
 					defaultValue={defaultValue}
 				/>
-				<StyledErrorText>{errors?.[keyForm]?.message}</StyledErrorText>
+				<Text
+					color={COLORS.TERCIARY}
+					align={MEASUREMENTS.ALIGN.LEFT}
+					fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TEXT}
+					text={errors?.[keyForm]?.message}
+				/>
 			</StyledInputContainer>
 		);
 	}

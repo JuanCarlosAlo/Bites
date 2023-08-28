@@ -7,12 +7,15 @@ import BuyButton from '../../components/buy-button/BuyButton';
 import { useState } from 'react';
 import Modal from '../../components/modal/Modal';
 import { useFetch } from '../../hooks/useFetch';
+import Text from '../../components/text/Text';
+import { MEASUREMENTS } from '../../constants/measurements';
+import { COLORS } from '../../constants/colors';
+import { StyledInfoContainer, StyledOrderContainer } from './styles';
+import Title from '../../components/title/Title';
 
 const Checkout = () => {
 	const { state } = useLocation();
-
 	const [content, setContent] = useState(null);
-
 	const { setFetchInfo } = useFetch();
 	if (!state) return <Navigate to={'/'} />;
 
@@ -20,21 +23,52 @@ const Checkout = () => {
 		<>
 			<PageComponent isBack={true}>
 				<Secondaryheader url={'/cart'} />
-				<div>
-					<p>Recipient:</p>
-					<p>{state.recipient}</p>
-				</div>
-				<div>
-					<p>Address:</p>
-					<p>{state.address}</p>
-				</div>
-				{state.items.map(item => (
-					<ItemSecondaryContainer
-						key={item._id}
-						item={item}
-						setFetchInfo={setFetchInfo}
-					/>
-				))}
+				<Title
+					align={MEASUREMENTS.ALIGN.CENTER}
+					fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TITLE}
+					text={'Checkout'}
+				/>
+				<StyledOrderContainer>
+					<StyledInfoContainer>
+						<Text
+							align={MEASUREMENTS.ALIGN.LEFT}
+							color={COLORS.WHITE}
+							fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
+							text={'Recipient:'}
+							nofullwidth={true}
+						/>
+						<Text
+							align={MEASUREMENTS.ALIGN.LEFT}
+							color={COLORS.WHITE}
+							fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TEXT}
+							text={state.recipient}
+							nofullwidth={true}
+						/>
+					</StyledInfoContainer>
+					<StyledInfoContainer>
+						<Text
+							align={MEASUREMENTS.ALIGN.LEFT}
+							color={COLORS.WHITE}
+							fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
+							text={'Address:'}
+							nofullwidth={true}
+						/>
+						<Text
+							align={MEASUREMENTS.ALIGN.LEFT}
+							color={COLORS.WHITE}
+							fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TEXT}
+							text={state.address}
+							nofullwidth={true}
+						/>
+					</StyledInfoContainer>
+					{state.items.map(item => (
+						<ItemSecondaryContainer
+							key={item._id}
+							item={item}
+							setFetchInfo={setFetchInfo}
+						/>
+					))}
+				</StyledOrderContainer>
 				<TotalPrice data={state.items} />
 
 				<BuyButton

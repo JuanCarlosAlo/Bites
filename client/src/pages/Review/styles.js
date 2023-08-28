@@ -19,8 +19,7 @@ const SubmitButton = styled.div`
 display: flex;
 	align-items: center;
 	justify-content: center;
-
-	background-color: ${COLORS.MAIN};
+	background-color: ${COLORS.TERCIARY};
 	border: 2px solid ${COLORS.WHITE};
 	color:  ${COLORS.WHITE};
 	width: 100%;

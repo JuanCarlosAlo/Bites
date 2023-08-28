@@ -10,6 +10,9 @@ import Secondaryheader from '../../components/secondary-header/SecondaryHeader';
 import { AuthContext } from '../../context/Auth.context';
 import { useContext } from 'react';
 import { v4 } from 'uuid';
+import { StyledForm } from './styles';
+import InputContainer from '../../components/InputContainer/InputContainer';
+import Title from '../../components/title/Title';
 
 const Address = () => {
 	const { state } = useLocation();
@@ -19,47 +22,49 @@ const Address = () => {
 		register,
 		formState: { errors }
 	} = useForm({ mode: 'onBlur' });
-
 	const navigate = useNavigate();
 	if (!state) return <Navigate to={'/'} />;
 	return (
 		<PageComponent isBack={true}>
 			<Secondaryheader url={'/cart'} />
-			<form
+			<Title
+				align={MEASUREMENTS.ALIGN.CENTER}
+				fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TITLE}
+				text={'Address and recipient'}
+			/>
+			<StyledForm
 				onSubmit={handleSubmit((formData, e) =>
 					onSubmit(formData, e, state, navigate)
 				)}
 			>
-				<div>
-					<label htmlFor='recipient'>Recipient</label>
-					<input
-						type='text'
-						name='recipient'
-						defaultValue={
-							currentUser.userName !== 'none' ? currentUser.userName : ''
-						}
-						{...register('recipient', FORM_VALIDATIONS.recipient)}
-					/>
-					<p>{errors?.recipient?.message}</p>
-				</div>
-				<div>
-					<label htmlFor='address'>Address</label>
-					<input
-						type='text'
-						name='address'
-						defaultValue={currentUser.address ? currentUser.address : ''}
-						{...register('address', FORM_VALIDATIONS.address)}
-					/>
-					<p>{errors?.address?.message}</p>
-				</div>
+				<InputContainer
+					errors={errors}
+					formValidation={FORM_VALIDATIONS.recipient}
+					keyForm={'recipient'}
+					label={'Recipient'}
+					register={register}
+					type={'recipient'}
+					defaultValue={
+						currentUser.userName !== 'none' ? currentUser.userName : ''
+					}
+				/>
+				<InputContainer
+					errors={errors}
+					formValidation={FORM_VALIDATIONS.address}
+					keyForm={'address'}
+					label={'Address'}
+					register={register}
+					type={'address'}
+					defaultValue={currentUser.address ? currentUser.address : ''}
+				/>
 
 				<PrimaryButton
 					align={MEASUREMENTS.ALIGN.CENTER}
-					bgcolor={COLORS.MAIN}
+					bgcolor={COLORS.TERCIARY}
 					color={COLORS.WHITE}
 					text={'Continue'}
 				/>
-			</form>
+			</StyledForm>
 		</PageComponent>
 	);
 };
