@@ -10,6 +10,7 @@ import {
 	StyledNumberItem,
 	StyledPrice,
 	StyledStar,
+	StyledStarsContainer,
 	StyledTitle
 } from './styles';
 import { updateAmount } from '../../utils/updateAmount';
@@ -53,18 +54,22 @@ const ItemContainer = ({ item, inCart, data, setData }) => {
 					if (!inCart) navigate(`/item/${item._id}`, { state: item });
 				}}
 			/>
-			{!inCart &&
-				starsArray.map((star, index) => (
-					<StyledStar
-						key={v4()}
-						src={
-							index < item.rating
-								? '/images/star-solid.svg'
-								: '/images/star-regular.svg'
-						}
-						alt={`Star ${index + 1}`}
-					/>
-				))}
+			{!inCart && item.rating !== 0 && (
+				<StyledStarsContainer>
+					{starsArray.map((star, index) => (
+						<StyledStar
+							key={v4()}
+							src={
+								index < item.rating
+									? '/images/star-solid.svg'
+									: '/images/star-regular.svg'
+							}
+							alt={`Star ${index + 1}`}
+						/>
+					))}
+				</StyledStarsContainer>
+			)}
+
 			<StyledTitle>
 				{inCart && (
 					<StyledCuantityButton
