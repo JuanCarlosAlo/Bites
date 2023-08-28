@@ -23,7 +23,7 @@ const Snacks = () => {
 				align={MEASUREMENTS.ALIGN.CENTER}
 				fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TITLE}
 				text={'Snacks'}
-				margin={0}
+				margin={'0.5 rem'}
 			/>
 			<PageColumnsContainer>
 				{data.map(item => (
