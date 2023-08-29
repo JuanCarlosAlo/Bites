@@ -28,9 +28,9 @@ export const MEASUREMENTS = {
 	},
 	FONTS_SIZE: {
 		TITLE: {
-			MOBILE: '1.4rem',
-			TABLET: '1.5rem',
-			DESKTOP: '1.5rem'
+			MOBILE: '1.2rem',
+			TABLET: '1.3rem',
+			DESKTOP: '1.35rem'
 		},
 		SUBTITLES: {
 			MOBILE: '1rem',
