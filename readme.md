@@ -1,4 +1,4 @@
-# VPM COMPI
+# Bites
 
 ![Project image](https://raw.githubusercontent.com/JuanCarlosAlo/Bites/main/client/public/images/readme0.jpg)
 
