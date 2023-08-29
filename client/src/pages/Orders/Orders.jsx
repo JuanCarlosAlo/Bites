@@ -24,7 +24,7 @@ const Orders = () => {
 	return (
 		<PageComponent isBack={true}>
 			<Secondaryheader url={'/'} />
-			{data.orders.lenght === 0 || !data ? (
+			{data.orders.lenght === 0 ? (
 				<Text
 					align={MEASUREMENTS.ALIGN.CENTER}
 					color={COLORS.MAIN}
