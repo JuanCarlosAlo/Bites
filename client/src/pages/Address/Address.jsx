@@ -8,11 +8,12 @@ import { MEASUREMENTS } from '../../constants/measurements';
 import { COLORS } from '../../constants/colors';
 import Secondaryheader from '../../components/secondary-header/SecondaryHeader';
 import { AuthContext } from '../../context/Auth.context';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { v4 } from 'uuid';
 import { StyledForm } from './styles';
 import InputContainer from '../../components/InputContainer/InputContainer';
 import Title from '../../components/title/Title';
+import LoadingPage from '../../components/loading-page/loading-page';
 
 const Address = () => {
 	const { state } = useLocation();
@@ -23,7 +24,9 @@ const Address = () => {
 		formState: { errors }
 	} = useForm({ mode: 'onBlur' });
 	const navigate = useNavigate();
+	const [loading, setLoading] = useState(false);
 	if (!state) return <Navigate to={'/'} />;
+	if (loading) return <LoadingPage />;
 	return (
 		<PageComponent isBack={true}>
 			<Secondaryheader url={'/cart'} />
@@ -34,7 +37,7 @@ const Address = () => {
 			/>
 			<StyledForm
 				onSubmit={handleSubmit((formData, e) =>
-					onSubmit(formData, e, state, navigate)
+					onSubmit(formData, e, state, navigate, setLoading)
 				)}
 			>
 				<InputContainer
@@ -69,10 +72,11 @@ const Address = () => {
 	);
 };
 
-const onSubmit = async (formData, e, state, navigate) => {
+const onSubmit = async (formData, e, state, navigate, setLoading) => {
 	e.preventDefault();
 
 	const { recipient, address } = formData;
+	setLoading(true);
 	const coordinates = await fetchCoordinates(address);
 
 	navigate('/checkout', {
