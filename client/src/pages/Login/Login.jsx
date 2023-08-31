@@ -16,6 +16,7 @@ import Secondaryheader from '../../components/secondary-header/SecondaryHeader';
 
 import { MEASUREMENTS } from '../../constants/measurements';
 import InputContainer from '../../components/InputContainer/InputContainer';
+import Title from '../../components/title/Title';
 
 const Login = () => {
 	const { currentUser } = useContext(AuthContext);
@@ -32,7 +33,11 @@ const Login = () => {
 	return (
 		<PageComponent isBack={true}>
 			<Secondaryheader url={'/'} />
-			<h2>Login</h2>
+			<Title
+				align={MEASUREMENTS.ALIGN.CENTER}
+				fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TITLE}
+				text={'Login'}
+			/>
 			<SocialLogin setFetchInfo={setFetchInfo} />
 			<form
 				onSubmit={handleSubmit((formData, e) =>
@@ -58,7 +63,7 @@ const Login = () => {
 
 				<PrimaryButton text={'Login'} />
 				<Text
-					color={COLORS.SECONDARY}
+					color={COLORS.TERCIARY}
 					text={'Dont have an account?'}
 					align={MEASUREMENTS.ALIGN.CENTER}
 					fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
@@ -66,7 +71,8 @@ const Login = () => {
 				<SecondaryButton
 					url={'/register'}
 					text={'Register here'}
-					color={COLORS.SECONDARY}
+					color={COLORS.WHITE}
+					bgcolor={COLORS.TERCIARY}
 					align={MEASUREMENTS.ALIGN.CENTER}
 				/>
 			</form>

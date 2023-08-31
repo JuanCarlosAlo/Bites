@@ -11,6 +11,7 @@ import Secondaryheader from '../../components/secondary-header/SecondaryHeader';
 import Text from '../../components/text/Text';
 import { MEASUREMENTS } from '../../constants/measurements';
 import { COLORS } from '../../constants/colors';
+import Title from '../../components/title/Title';
 
 const Orders = () => {
 	const { currentUser, loadingFirebase } = useContext(AuthContext);
@@ -24,6 +25,11 @@ const Orders = () => {
 	return (
 		<PageComponent isBack={true}>
 			<Secondaryheader url={'/'} />
+			<Title
+				align={MEASUREMENTS.ALIGN.CENTER}
+				fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TITLE}
+				text={'Orders'}
+			/>
 			{data.orders.lenght === 0 ? (
 				<Text
 					align={MEASUREMENTS.ALIGN.CENTER}

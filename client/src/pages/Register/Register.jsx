@@ -23,6 +23,7 @@ import { MEASUREMENTS } from '../../constants/measurements';
 import InputContainer from '../../components/InputContainer/InputContainer';
 import ErrorPage from '../../components/error-page/ErrorPage';
 import LoadingPage from '../../components/loading-page/loading-page';
+import Title from '../../components/title/Title';
 const Register = () => {
 	const { currentUser } = useContext(AuthContext);
 
@@ -43,7 +44,11 @@ const Register = () => {
 	return (
 		<PageComponent isBack={true}>
 			<Secondaryheader url={'/'} />
-			<h2>Register</h2>
+			<Title
+				align={MEASUREMENTS.ALIGN.CENTER}
+				fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TITLE}
+				text={'Register'}
+			/>
 			<SocialLogin setFetchInfo={setFetchInfo} />
 			<form
 				onSubmit={handleSubmit((formData, e) =>
@@ -87,7 +92,8 @@ const Register = () => {
 			<SecondaryButton
 				url={'/login'}
 				text={'Login here'}
-				color={COLORS.SECONDARY}
+				color={COLORS.WHITE}
+				bgcolor={COLORS.TERCIARY}
 				align={MEASUREMENTS.ALIGN.CENTER}
 			/>
 		</PageComponent>
