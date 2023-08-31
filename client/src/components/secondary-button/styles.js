@@ -17,7 +17,7 @@ const StyledButton = styled.button`
 	padding-top : 0.5rem;
 	padding-bottom : 0.5rem;
 	font-weight: ${MEASUREMENTS.FONTS_WEIGHT.BOLD};
-	font-size:${MEASUREMENTS.FONTS_SIZE.TITLE.MOBILE};
+	font-size:${MEASUREMENTS.FONTS_SIZE.SUBTITLES.MOBILE};
 	margin-bottom:1rem;
 	cursor: pointer;
 	&:hover{
@@ -26,10 +26,10 @@ const StyledButton = styled.button`
 		border: none
 	}
 	@media screen and (min-width: 780px){
-		font-size:${MEASUREMENTS.FONTS_SIZE.TITLE.TABLET};
+		font-size:${MEASUREMENTS.FONTS_SIZE.SUBTITLES.TABLET};
 	}
 	@media screen and (min-width: 1024px){
-		font-size:${MEASUREMENTS.FONTS_SIZE.TITLE.DESKTOP};
+		font-size:${MEASUREMENTS.FONTS_SIZE.SUBTITLES.DESKTOP};
 	}
 `;
 
