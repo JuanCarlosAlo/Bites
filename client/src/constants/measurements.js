@@ -39,7 +39,7 @@ export const MEASUREMENTS = {
 		},
 		TEXT: {
 			MOBILE: '1.2rem',
-			TABLET: '1rem',
+			TABLET: '1.2rem',
 			DESKTOP: '1rem'
 		},
 		KEY: {
