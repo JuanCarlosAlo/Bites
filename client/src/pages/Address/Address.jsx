@@ -47,7 +47,7 @@ const Address = () => {
 					label={'Recipient'}
 					register={register}
 					type={'recipient'}
-					defaultValue={currentUser.userName ? currentUser.userName : ''}
+					defaultValue={currentUser ? currentUser.userName : ''}
 				/>
 				<InputContainer
 					errors={errors}
@@ -56,7 +56,7 @@ const Address = () => {
 					label={'Address'}
 					register={register}
 					type={'address'}
-					defaultValue={currentUser.address ? currentUser.address : ''}
+					defaultValue={currentUser ? currentUser.address : ''}
 				/>
 
 				<PrimaryButton
