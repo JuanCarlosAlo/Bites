@@ -47,9 +47,7 @@ const Address = () => {
 					label={'Recipient'}
 					register={register}
 					type={'recipient'}
-					defaultValue={
-						currentUser.userName !== 'none' ? currentUser.userName : ''
-					}
+					defaultValue={currentUser.userName ? currentUser.userName : ''}
 				/>
 				<InputContainer
 					errors={errors}
