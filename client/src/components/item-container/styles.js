@@ -9,7 +9,7 @@ justify-content: space-between;
 align-items: center;
 height: 230px;
 width: 100%;
-max-width: 350px;
+/* max-width: 350px; */
 margin-left: auto;
 margin-right: auto;
 `
