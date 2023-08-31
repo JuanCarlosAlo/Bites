@@ -33,12 +33,12 @@ export const MEASUREMENTS = {
 			DESKTOP: '1.2rem'
 		},
 		SUBTITLES: {
-			MOBILE: '1.4rem',
-			TABLET: '1.3rem',
+			MOBILE: '1.7rem',
+			TABLET: '1.6rem',
 			DESKTOP: '1.25rem'
 		},
 		TEXT: {
-			MOBILE: '1.3rem',
+			MOBILE: '1.6rem',
 			TABLET: '1.2rem',
 			DESKTOP: '1rem'
 		},
