@@ -16,7 +16,7 @@ const Header = () => {
 	return (
 		<StyledHeader>
 			<StyledHeaderContainer>
-				<Logo fontSize={'1rem'} />
+				<Logo fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TITLE} />
 				{currentUser ? (
 					<nav>
 						<StyledMenu>
