@@ -28,19 +28,19 @@ export const MEASUREMENTS = {
 	},
 	FONTS_SIZE: {
 		TITLE: {
-			MOBILE: '1.2rem',
-			TABLET: '1.3rem',
+			MOBILE: '1.3rem',
+			TABLET: '1.35rem',
 			DESKTOP: '1.35rem'
 		},
 		SUBTITLES: {
-			MOBILE: '1rem',
-			TABLET: '1.2rem',
-			DESKTOP: '1.2rem'
+			MOBILE: '1.2rem',
+			TABLET: '1.3rem',
+			DESKTOP: '1.3rem'
 		},
 		TEXT: {
-			MOBILE: '0.8rem',
-			TABLET: '1rem',
-			DESKTOP: '1rem'
+			MOBILE: '1rem',
+			TABLET: '1.2rem',
+			DESKTOP: '1.3rem'
 		},
 		KEY: {
 			TITLE: 'TITLE',
