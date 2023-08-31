@@ -11,14 +11,7 @@ const GlobalStyles = createGlobalStyle`
     display: block;
     max-width: 100%;
   }
-  @font-face {
-    font-family: NumberNextBold;
-    src: url('/fonts/nuber-next-font-family/NuberNextCondensed-DemiBold.otf');
-}
-@font-face {
-    font-family: NumberNextRegular;
-    src: url('/fonts/nuber-next-font-family/NuberNextCondensed-Regular.otf');
-}
+
 @font-face {
     font-family: Abnes;
     src: url('/fonts/nuber-next-font-family/Abnes.otf');
@@ -27,7 +20,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     font-family: sans-serif;
     height: 100%;
-    width: 100%;
+    width: 100vw;
     background: ${SECONDARY_COLORS.BACKGROUND_GRADIANT};;
     background-size: cover;
     background-position: center;
