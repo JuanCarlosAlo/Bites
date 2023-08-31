@@ -64,6 +64,7 @@ const Login = () => {
 				<PrimaryButton
 					text={'Login'}
 					bgcolor={COLORS.TERCIARY}
+					color={COLORS.WHITE}
 					align={MEASUREMENTS.ALIGN.CENTER}
 					fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
 				/>

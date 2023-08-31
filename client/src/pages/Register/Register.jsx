@@ -82,15 +82,15 @@ const Register = () => {
 
 				<PrimaryButton
 					text={'Register'}
-					color={COLORS.MAIN}
 					bgcolor={COLORS.TERCIARY}
+					color={COLORS.WHITE}
 					align={MEASUREMENTS.ALIGN.CENTER}
 					fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
 				/>
 			</form>
 
 			<Text
-				color={COLORS.SECONDARY}
+				color={COLORS.TERCIARY}
 				text={'Already have an account?'}
 				align={MEASUREMENTS.ALIGN.CENTER}
 				fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
@@ -98,8 +98,7 @@ const Register = () => {
 			<SecondaryButton
 				url={'/login'}
 				text={'Login here'}
-				color={COLORS.WHITE}
-				bgcolor={COLORS.TERCIARY}
+				color={COLORS.TERCIARY}
 				align={MEASUREMENTS.ALIGN.CENTER}
 			/>
 		</PageComponent>
