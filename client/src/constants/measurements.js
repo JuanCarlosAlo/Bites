@@ -34,7 +34,7 @@ export const MEASUREMENTS = {
 		},
 		SUBTITLES: {
 			MOBILE: '1.7rem',
-			TABLET: '1.6rem',
+			TABLET: '1.4rem',
 			DESKTOP: '1.25rem'
 		},
 		TEXT: {
