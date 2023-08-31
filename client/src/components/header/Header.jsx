@@ -6,6 +6,9 @@ import { AuthContext } from '../../context/Auth.context';
 import LoadingPage from '../loading-page/loading-page';
 import CartButton from '../../components/cart-button/CartButton';
 import Icon from '../icon/Icon';
+import Text from '../text/Text';
+import { MEASUREMENTS } from '../../constants/measurements';
+import { COLORS } from '../../constants/colors';
 const Header = () => {
 	const { currentUser, loadingFirebase } = useContext(AuthContext);
 	if (loadingFirebase) return <LoadingPage />;
@@ -39,10 +42,26 @@ const Header = () => {
 								<CartButton />
 							</li>
 							<Link to={'/register'}>
-								<li>Register</li>
+								<li>
+									<Text
+										align={MEASUREMENTS.ALIGN.CENTER}
+										color={COLORS.MAIN}
+										fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
+										nofullwidth={true}
+										text={'Register'}
+									/>
+								</li>
 							</Link>
 							<Link to={'/login'}>
-								<li>Login</li>
+								<li>
+									<Text
+										align={MEASUREMENTS.ALIGN.CENTER}
+										color={COLORS.MAIN}
+										fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
+										nofullwidth={true}
+										text={'Login'}
+									/>
+								</li>
 							</Link>
 						</StyledMenu>
 					</nav>
