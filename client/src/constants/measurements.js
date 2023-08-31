@@ -28,8 +28,8 @@ export const MEASUREMENTS = {
 	},
 	FONTS_SIZE: {
 		TITLE: {
-			MOBILE: '1.5rem',
-			TABLET: '1.35rem',
+			MOBILE: '2.5rem',
+			TABLET: '1.8rem',
 			DESKTOP: '1.2rem'
 		},
 		SUBTITLES: {
