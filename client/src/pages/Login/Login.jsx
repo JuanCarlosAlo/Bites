@@ -61,21 +61,25 @@ const Login = () => {
 					type={'password'}
 				/>
 
-				<PrimaryButton text={'Login'} />
-				<Text
-					color={COLORS.SECONDARY}
-					text={'Dont have an account?'}
+				<PrimaryButton
+					text={'Login'}
+					bgcolor={COLORS.TERCIARY}
 					align={MEASUREMENTS.ALIGN.CENTER}
 					fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
 				/>
-				<SecondaryButton
-					url={'/register'}
-					text={'Register here'}
-					color={COLORS.WHITE}
-					bgcolor={COLORS.TERCIARY}
-					align={MEASUREMENTS.ALIGN.CENTER}
-				/>
 			</form>
+			<Text
+				color={COLORS.TERCIARY}
+				text={'Dont have an account?'}
+				align={MEASUREMENTS.ALIGN.CENTER}
+				fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
+			/>
+			<SecondaryButton
+				url={'/register'}
+				text={'Register here'}
+				color={COLORS.TERCIARY}
+				align={MEASUREMENTS.ALIGN.CENTER}
+			/>
 		</PageComponent>
 	);
 };

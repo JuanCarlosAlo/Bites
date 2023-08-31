@@ -80,7 +80,13 @@ const Register = () => {
 					type={'address'}
 				/>
 
-				<PrimaryButton text={'Register'} color={COLORS.MAIN} />
+				<PrimaryButton
+					text={'Register'}
+					color={COLORS.MAIN}
+					bgcolor={COLORS.TERCIARY}
+					align={MEASUREMENTS.ALIGN.CENTER}
+					fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
+				/>
 			</form>
 
 			<Text
