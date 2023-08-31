@@ -39,7 +39,7 @@ const InputContainer = ({
 					))}
 				</StyledSelect>
 				<Text
-					color={COLORS.TERCIARY}
+					color={COLORS.SECONDARY}
 					align={MEASUREMENTS.ALIGN.LEFT}
 					fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TEXT}
 					text={errors?.[keyForm]?.message}
@@ -58,7 +58,7 @@ const InputContainer = ({
 					defaultValue={defaultValue}
 				/>
 				<Text
-					color={COLORS.TERCIARY}
+					color={COLORS.SECONDARY}
 					align={MEASUREMENTS.ALIGN.LEFT}
 					fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TEXT}
 					text={errors?.[keyForm]?.message}
