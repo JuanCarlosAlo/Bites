@@ -9,7 +9,7 @@ justify-content: space-between;
 align-items: center;
 height: 230px;
 width: 100%;
-/* max-width: 350px; */
+max-width: 350px;
 margin-left: auto;
 margin-right: auto;
 `
@@ -23,8 +23,8 @@ height: 15px;
 
 const StyledImgItem = styled.img`
 
-width: 150px;
-height: 150px;
+max-width: 200px;
+max-height: 200px;
 margin-left: auto;
 margin-right: auto;
 cursor: ${({ inCart }) => {
