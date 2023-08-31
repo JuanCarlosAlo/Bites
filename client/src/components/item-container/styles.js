@@ -48,7 +48,7 @@ background-color: ${COLORS.MAIN};
 
 const StyledPrice = styled.div`
 position: absolute;
-width: 70px;
+width: 100px;
 padding-RIGHT: 1rem;
 top: 55%;
 right: 0;
