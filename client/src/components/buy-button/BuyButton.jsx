@@ -48,7 +48,7 @@ const handleClick = async (
 	setContent,
 	setFetchInfo
 ) => {
-	const remainingTime = await fetchDuration(order.coordinates, currentUser._id);
+	const remainingTime = await fetchDuration(order.coordinates, order._id);
 	const deliveryTime = calculateDeliveryDate(remainingTime);
 	setContent(<PopupModal setContent={setContent} />);
 
