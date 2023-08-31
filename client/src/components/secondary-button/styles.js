@@ -13,7 +13,7 @@ const StyledButton = styled.button`
 		}
 	}};
 	background-color: ${({ bgcolor }) => bgcolor};
-	width: 160px;
+	width: 180px;
 	padding-top : 0.5rem;
 	padding-bottom : 0.5rem;
 	font-weight: ${MEASUREMENTS.FONTS_WEIGHT.BOLD};
