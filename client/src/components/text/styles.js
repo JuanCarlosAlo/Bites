@@ -30,6 +30,11 @@ const StyledText = styled.p`
 		margin-top:  ${({ fontSize }) => { return `calc(${MEASUREMENTS.FONTS_SIZE[fontSize].DESKTOP} - 0.5rem)` }};
 		margin-bottom:  ${({ fontSize }) => { return `calc(${MEASUREMENTS.FONTS_SIZE[fontSize].DESKTOP} - 0.5rem)` }};
 	}
+	@media screen and (min-width: 1400px) {
+		font-size: ${({ fontSize }) => MEASUREMENTS.FONTS_SIZE[fontSize].HIGH_HD};
+		margin-top:  ${({ fontSize }) => { return `calc(${MEASUREMENTS.FONTS_SIZE[fontSize].HIGH_HD} - 0.5rem)` }};
+		margin-bottom:  ${({ fontSize }) => { return `calc(${MEASUREMENTS.FONTS_SIZE[fontSize].HIGH_HD} - 0.5rem)` }};
+	}
 `;
 
 export { StyledText };

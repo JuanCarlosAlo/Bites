@@ -7,7 +7,7 @@ grid-template-rows: repeat(auto-fill, 250px);
 gap: 1rem;
 height: 100%;
 width: 100%;
-padding-left: 10px;
+/* padding-left: 10px; */
 overflow-y: scroll;
 @media screen and (min-width: 788px){
     grid-template-columns: repeat(3, 1fr); 

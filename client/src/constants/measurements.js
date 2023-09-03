@@ -28,25 +28,29 @@ export const MEASUREMENTS = {
 	},
 	FONTS_SIZE: {
 		TITLE: {
-			MOBILE: '2.5rem',
-			TABLET: '1.8rem',
-			DESKTOP: '1.2rem'
+			MOBILE: '1.35rem',
+			TABLET: '1.4rem',
+			DESKTOP: '1.45rem',
+			HIGH_HD: '3rem'
 		},
 		SUBTITLES: {
-			MOBILE: '1.7rem',
-			TABLET: '1.4rem',
-			DESKTOP: '1.25rem'
+			MOBILE: '1.2rem',
+			TABLET: '1.2rem',
+			DESKTOP: '1.25rem',
+			HIGH_HD: '2rem'
 		},
 		TEXT: {
-			MOBILE: '1.6rem',
-			TABLET: '1.2rem',
-			DESKTOP: '1rem'
+			MOBILE: '1rem',
+			TABLET: '1.1rem',
+			DESKTOP: '1.2rem',
+			HIGH_HD: '1.5rem'
 		},
 		KEY: {
 			TITLE: 'TITLE',
 			SUBTITLE: 'SUBTITLES',
 			TEXT: 'TEXT',
-			DESKTOP: 'DESKTOP'
+			DESKTOP: 'DESKTOP',
+			HIGH_HD: 'HIGH_HD'
 		}
 	},
 	FONTS_WEIGHT: {
