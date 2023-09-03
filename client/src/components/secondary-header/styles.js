@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { MEASUREMENTS } from '../../constants/measurements';
+import { COLORS } from '../../constants/colors';
 
 const StyledSecondaryHeader = styled.div`
 display: flex;
@@ -10,6 +11,7 @@ display: flex;
 	height: ${({ url }) => {
 		if (url) { return ` ${MEASUREMENTS.HEADER.SECONDARY.HEIGHT.DESKTOP}` } else { return ` ${MEASUREMENTS.HEADER.SECONDARY.HEIGHT.MOBILE}` }
 	}}; 
+	background-color:${COLORS.WHITE};
 	width: 100%;
 	@media screen and (min-width:768px){
 		height:  ${MEASUREMENTS.HEADER.SECONDARY.HEIGHT.DESKTOP};
