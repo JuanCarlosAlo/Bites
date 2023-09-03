@@ -47,7 +47,7 @@ const Cart = () => {
 	if (!cartItems || !data) return <LoadingPage />;
 	if (data.length === 0)
 		return (
-			<PageComponent>
+			<PageComponent isBack={true}>
 				<Secondaryheader url={'/'} />
 				<Title
 					align={MEASUREMENTS.ALIGN.CENTER}
