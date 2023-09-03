@@ -21,7 +21,7 @@ const Orders = () => {
 	});
 
 	if (loading || !data || loadingFirebase) return <LoadingPage />;
-	console.log(data);
+
 	return (
 		<PageComponent isBack={true}>
 			<Secondaryheader url={'/'} />

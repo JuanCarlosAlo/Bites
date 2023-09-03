@@ -32,6 +32,12 @@ const Profile = () => {
 					align={MEASUREMENTS.ALIGN.LEFT}
 					color={COLORS.MAIN}
 					fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
+					text={`E-mail: ${currentUser.email}`}
+				/>
+				<Text
+					align={MEASUREMENTS.ALIGN.LEFT}
+					color={COLORS.MAIN}
+					fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
 					text={`Username: ${currentUser.userName}`}
 				/>
 				<Text

@@ -4,15 +4,28 @@ import { COLORS } from "../../constants/colors";
 
 const StyledReviewContainer = styled.div`
 display: flex;
+flex-direction: column;
 align-items: center;
 justify-content: space-between;
 width: 100%;
+background-color: ${COLORS.MAIN};
+padding: 1rem;
 margin-bottom: 1rem;
+border-radius: 0.5rem;
+`
+
+const StyledReviewInfo = styled.div`
+display:flex;
+align-items: center;
+justify-content: space-between;
+width: 100%;
 `
 
 const StyledReviewImg = styled.img`
 width: 40px;
 height: 40px;
+background-color: ${COLORS.WHITE};
+border-radius: 0.5rem;
 `
 
 const SubmitButton = styled.div`
@@ -33,4 +46,4 @@ display: flex;
 	}
 `
 
-export { StyledReviewContainer, StyledReviewImg, SubmitButton }
+export { StyledReviewContainer, StyledReviewImg, SubmitButton, StyledReviewInfo }
