@@ -4,8 +4,7 @@ import ItemSecondaryContainer from '../../components/item-secondary-container/It
 import TotalPrice from '../../components/total-price/TotalPrice';
 import Secondaryheader from '../../components/secondary-header/SecondaryHeader';
 import BuyButton from '../../components/buy-button/BuyButton';
-import { useState } from 'react';
-import Modal from '../../components/modal/Modal';
+
 import { useFetch } from '../../hooks/useFetch';
 import Text from '../../components/text/Text';
 import { MEASUREMENTS } from '../../constants/measurements';
@@ -13,9 +12,12 @@ import { COLORS } from '../../constants/colors';
 import { StyledInfoContainer, StyledOrderContainer } from './styles';
 import Title from '../../components/title/Title';
 
+import { ModalContext } from '../../context/Modal.context';
+import { useContext } from 'react';
+
 const Checkout = () => {
 	const { state } = useLocation();
-	const [content, setContent] = useState(null);
+	const { setContent, setPopup } = useContext(ModalContext);
 	const { setFetchInfo } = useFetch();
 	if (!state) return <Navigate to={'/'} />;
 
@@ -74,10 +76,10 @@ const Checkout = () => {
 				<BuyButton
 					order={state}
 					setContent={setContent}
+					setPopup={setPopup}
 					setFetchInfo={setFetchInfo}
 				/>
 			</PageComponent>
-			<Modal popup={true}>{content}</Modal>
 		</>
 	);
 };

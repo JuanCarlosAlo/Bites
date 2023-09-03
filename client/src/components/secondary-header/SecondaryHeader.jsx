@@ -13,7 +13,7 @@ const Secondaryheader = ({ url, text, state, secondaryUrl }) => {
 			<StyledSecondaryHeaderContainer url={url}>
 				{!url ? (
 					<>
-						{HEADER_BUTTONS.MAIN.map((button, index) => (
+						{HEADER_BUTTONS.MAIN.map(button => (
 							<SecondaryButton
 								key={button._id}
 								align={MEASUREMENTS.ALIGN.CENTER}
@@ -31,7 +31,7 @@ const Secondaryheader = ({ url, text, state, secondaryUrl }) => {
 							align={MEASUREMENTS.ALIGN.RIGHT}
 							color={COLORS.MAIN}
 							url={url}
-							text={'BACK'}
+							text={'Back'}
 							state={state}
 							border={true}
 						/>

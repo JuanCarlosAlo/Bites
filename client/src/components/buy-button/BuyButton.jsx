@@ -17,7 +17,7 @@ import Icon from '../icon/Icon';
 import { fetchDuration } from '../../utils/fetchDuration';
 import { calculateDeliveryDate } from '../../utils/deliveryTime';
 
-const BuyButton = ({ order, setContent, setFetchInfo, initialDuration }) => {
+const BuyButton = ({ order, setContent, setFetchInfo, setPopup }) => {
 	const navigate = useNavigate();
 	const { currentUser, loadingFirebase } = useContext(AuthContext);
 
@@ -26,7 +26,14 @@ const BuyButton = ({ order, setContent, setFetchInfo, initialDuration }) => {
 	return (
 		<StyledBuyButton
 			onClick={() =>
-				handleClick(order, currentUser, navigate, setContent, setFetchInfo)
+				handleClick(
+					order,
+					currentUser,
+					navigate,
+					setContent,
+					setFetchInfo,
+					setPopup
+				)
 			}
 		>
 			<Text
@@ -46,10 +53,12 @@ const handleClick = async (
 	currentUser,
 	navigate,
 	setContent,
-	setFetchInfo
+	setFetchInfo,
+	setPopup
 ) => {
 	const remainingTime = await fetchDuration(order.coordinates, order._id);
 	const deliveryTime = calculateDeliveryDate(remainingTime);
+	setPopup(true);
 	setContent(<PopupModal setContent={setContent} />);
 
 	localStorage.removeItem('cartItems');
