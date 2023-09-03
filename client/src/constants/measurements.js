@@ -10,14 +10,14 @@ export const MEASUREMENTS = {
 		},
 		SECONDARY: {
 			HEIGHT: {
-				MOBILE: '150px',
+				MOBILE: '160px',
 				DESKTOP: '60px'
 			}
 		}
 	},
 	PADDING: {
 		SECONDARY_HEADER: {
-			MOBILE: '150px',
+			MOBILE: '160px',
 			DESKTOP: '70px'
 		},
 		MOBILE_OUTSIDE: ' 0.5rem'
@@ -34,8 +34,8 @@ export const MEASUREMENTS = {
 			HIGH_HD: '3rem'
 		},
 		SUBTITLES: {
-			MOBILE: '1.2rem',
-			TABLET: '1.2rem',
+			MOBILE: '1.15rem',
+			TABLET: '1.15rem',
 			DESKTOP: '1.25rem',
 			HIGH_HD: '2rem'
 		},

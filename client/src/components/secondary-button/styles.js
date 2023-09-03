@@ -13,7 +13,7 @@ const StyledButton = styled.button`
 		}
 	}};
 	background-color: ${({ bgcolor }) => bgcolor};
-	width: 180px;
+	width: 130px;
 	padding-top : 0.5rem;
 	padding-bottom : 0.5rem;
 	font-weight: ${MEASUREMENTS.FONTS_WEIGHT.BOLD};
@@ -25,8 +25,9 @@ const StyledButton = styled.button`
 		color: ${COLORS.WHITE};
 		border: none
 	}
-	@media screen and (min-width: 780px){
+	@media screen and (min-width: 468px){
 		font-size:${MEASUREMENTS.FONTS_SIZE.SUBTITLES.TABLET};
+		width: 200px;
 	}
 	@media screen and (min-width: 1024px){
 		font-size:${MEASUREMENTS.FONTS_SIZE.SUBTITLES.DESKTOP};
