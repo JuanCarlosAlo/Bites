@@ -1,4 +1,4 @@
-const BASE = 'http://bites-server.onrender.com/';
+const BASE = 'https://bites-server.onrender.com/';
 
 export const USERS_URLS = {
 	ALL_USERS: BASE + 'users/all-users',
