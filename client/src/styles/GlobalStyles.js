@@ -19,7 +19,7 @@ const GlobalStyles = createGlobalStyle`
   body{
     margin: 0;
     font-family: sans-serif;
-    height: 100%;
+    height: 100vh;
     width: 100vw;
     background: ${SECONDARY_COLORS.BACKGROUND_GRADIANT};;
     background-size: cover;
