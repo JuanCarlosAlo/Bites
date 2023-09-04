@@ -8,6 +8,7 @@ width: 30px;
 height: 30px;
 background-color: ${COLORS.TERCIARY};
 padding: 0.5rem;
+cursor: pointer;
 `
 
 export { StyledCrossButton }
