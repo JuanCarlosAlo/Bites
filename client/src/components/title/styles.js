@@ -22,11 +22,11 @@ const StyledTitle = styled.p`
 	@media screen and (min-width: 1024px) {
 		font-size: ${({ fontSize }) => MEASUREMENTS.FONTS_SIZE[fontSize].DESKTOP};
 	}
-	@media screen and (min-width: 1400px) {
+	/* @media screen and (min-width: 1400px) {
 		font-size: ${({ fontSize }) => MEASUREMENTS.FONTS_SIZE[fontSize].HIGH_HD};
 		margin-top:  ${({ fontSize }) => { return `calc(${MEASUREMENTS.FONTS_SIZE[fontSize].HIGH_HD} - 0.5rem)` }};
 		margin-bottom:  ${({ fontSize }) => { return `calc(${MEASUREMENTS.FONTS_SIZE[fontSize].HIGH_HD} - 0.5rem)` }};
-	}
+	} */
 `;
 
 export { StyledTitle };
