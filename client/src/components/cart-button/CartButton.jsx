@@ -5,6 +5,7 @@ import Text from '../text/Text';
 import { MEASUREMENTS } from '../../constants/measurements';
 import { COLORS } from '../../constants/colors';
 import { useNavigate } from 'react-router-dom';
+import Icon from '../icon/Icon';
 
 const CartButton = () => {
 	const { cartItems } = useContext(CartContext);
