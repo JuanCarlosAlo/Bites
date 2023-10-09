@@ -12,13 +12,13 @@ const CartButton = () => {
 	const navigate = useNavigate();
 	return (
 		<StyledCartButton onClick={() => navigate('/cart')}>
-			{/* <Text
+			<StyledCartImg src='/images/cart-shopping-solid.svg' alt='' />
+			<Text
 				align={MEASUREMENTS.ALIGN.CENTER}
 				color={COLORS.WHITE}
 				fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
-				text={`Cart ${cartItems.length}`}
-			/> */}
-			<Icon img={'/images/cart-shopping-solid.svg'} />
+				text={cartItems.length}
+			/>
 		</StyledCartButton>
 	);
 };
