@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { StyledCartButton } from './styles';
+import { StyledCartButton, StyledCartImg } from './styles';
 import { CartContext } from '../../context/Cart.context';
 import Text from '../text/Text';
 import { MEASUREMENTS } from '../../constants/measurements';
