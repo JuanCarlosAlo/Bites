@@ -17,7 +17,7 @@ const CartButton = () => {
 				fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
 				text={`Cart ${cartItems.length}`}
 			/> */}
-			<Icon img={'/images/add/to/cart.svg'} />
+			<Icon img={'/images/cart-shopping-solid.svg'} />
 		</StyledCartButton>
 	);
 };
