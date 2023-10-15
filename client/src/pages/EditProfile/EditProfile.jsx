@@ -81,7 +81,7 @@ const onSubmit = async (formData, e, setFetchInfo, data, currentUser) => {
 	const { userName, address } = formData;
 	const userNameUsed = data.find(user => user.userName === userName);
 
-	if (!userNameUsed) {
+	if (!userNameUsed || userName === currentUser.userName) {
 		try {
 			await setFetchInfo({
 				url: USERS_URLS.EDIT_USER + currentUser._id,
@@ -93,7 +93,7 @@ const onSubmit = async (formData, e, setFetchInfo, data, currentUser) => {
 					}),
 					headers: HEADERS
 				},
-				navigateTo: '/'
+				navigateTo: { url: '/' }
 			});
 		} catch (error) {
 			console.log(error);
