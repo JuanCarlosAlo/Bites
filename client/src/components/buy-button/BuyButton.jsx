@@ -58,10 +58,10 @@ const handleClick = async (
 ) => {
 	const remainingTime = await fetchDuration(order.coordinates, order._id);
 	const deliveryTime = calculateDeliveryDate(remainingTime);
+	localStorage.removeItem('cartItems');
 	setPopup(true);
 	setContent(<PopupModal setContent={setContent} />);
 
-	localStorage.removeItem('cartItems');
 	if (currentUser) {
 		try {
 			await setFetchInfo({
