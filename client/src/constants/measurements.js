@@ -10,7 +10,7 @@ export const MEASUREMENTS = {
 		},
 		SECONDARY: {
 			HEIGHT: {
-				MOBILE: '160px',
+				MOBILE: '170px',
 				DESKTOP: '60px'
 			}
 		}

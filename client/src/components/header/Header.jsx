@@ -25,7 +25,7 @@ const Header = () => {
 							</li>
 							<Link to={`/orders/${currentUser._id}`}>
 								<li>
-									<Icon img={'/images/orders.png'} />
+									<Icon img={'/images/orders-white.png'} />
 								</li>
 							</Link>
 							<Link to={'/profile'}>
@@ -45,7 +45,7 @@ const Header = () => {
 								<li>
 									<Text
 										align={MEASUREMENTS.ALIGN.CENTER}
-										color={COLORS.MAIN}
+										color={COLORS.WHITE}
 										fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
 										nofullwidth={true}
 										text={'Register'}
@@ -56,7 +56,7 @@ const Header = () => {
 								<li>
 									<Text
 										align={MEASUREMENTS.ALIGN.CENTER}
-										color={COLORS.MAIN}
+										color={COLORS.WHITE}
 										fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
 										nofullwidth={true}
 										text={'Login'}

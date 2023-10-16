@@ -7,8 +7,8 @@ const StyledHeader = styled.header`
 	align-items: center;
 	justify-content: space-between;
 	height: ${MEASUREMENTS.HEADER.MAIN.HEIGHT};
-	background-color: ${COLORS.WHITE};
-	color: ${COLORS.MAIN};
+	background-color: ${COLORS.MAIN};
+	color: ${COLORS.WHITE};
 
 `;
 

@@ -11,6 +11,7 @@ display: flex;
 	height: ${({ url }) => {
 		if (url) { return ` ${MEASUREMENTS.HEADER.SECONDARY.HEIGHT.DESKTOP}` } else { return ` ${MEASUREMENTS.HEADER.SECONDARY.HEIGHT.MOBILE}` }
 	}}; 
+	padding-top:1rem;
 	background-color:${COLORS.WHITE};
 	width: 100%;
 	@media screen and (min-width:768px){
